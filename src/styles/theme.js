@@ -35,7 +35,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'San Francisco Display',
-    fontSize: 14,
+    fontSize: 11,
   },
   overrides: {
     MuiButton: {
