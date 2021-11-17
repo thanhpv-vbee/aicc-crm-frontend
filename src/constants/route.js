@@ -1,0 +1,15 @@
+export default {
+  HOME: '/',
+  LOGIN: '/login',
+  REGISTER: '/register',
+  PRICING: '/pricing',
+  PAYMENT: '/payment',
+  VIDEOS: '/videos',
+  CREATE_VIDEO: '/videos/create',
+  TEMPLATES: '/templates',
+  LOCK: '/lock',
+  DASHBOARD: '/dashboard',
+  SCRIPT: '/script',
+  CAMPAIGN: '/campaign',
+  API: '/api',
+};
