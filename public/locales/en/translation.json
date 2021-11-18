@@ -6,5 +6,7 @@
   "campaign": "Campaign",
   "patternScript": "Pattern Script",
   "api": "API",
-  "payment": "Payment"
+  "payment": "Payment",
+  "quotation": "Quotation",
+  "bill": "Bill"
 }

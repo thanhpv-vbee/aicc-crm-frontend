@@ -3,6 +3,7 @@ import LoginPage from '@src/pages/';
 import DashboardPage from '@src/pages/Dashboard';
 import ScriptPage from '@src/pages/Script';
 import CampaignPage from '@src/pages/Campaign';
+import PaymentPage from '@src/pages/Payment';
 import ROUTES from '@src/constants/route';
 
 export default [
@@ -37,6 +38,27 @@ export default [
   {
     path: ROUTES.CAMPAIGN,
     component: CampaignPage,
+    exact: true,
+    restricted: false,
+    isPrivate: true,
+  },
+  {
+    path: ROUTES.BILL,
+    component: ScriptPage,
+    exact: true,
+    restricted: false,
+    isPrivate: true,
+  },
+  {
+    path: ROUTES.PRICE,
+    component: ScriptPage,
+    exact: true,
+    restricted: false,
+    isPrivate: true,
+  },
+  {
+    path: ROUTES.PAYMENT,
+    component: PaymentPage,
     exact: true,
     restricted: false,
     isPrivate: true,

@@ -6,5 +6,7 @@
   "campaign": "Chiến dịch",
   "patternScript": "Kịch bản mẫu",
   "api": "API",
-  "payment": "Thanh toán"
+  "payment": "Thanh toán",
+  "quotation": "Bảng giá dịch vụ",
+  "bill": "Hóa đơn"
 }

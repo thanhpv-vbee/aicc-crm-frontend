@@ -9,6 +9,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest: true,
   },
   extends: ['airbnb', 'prettier'],
   globals: {
@@ -22,7 +23,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'jest'],
   rules: {
     'prettier/prettier': ['error', prettierOptions],
     'react/prop-types': 0,
@@ -32,6 +33,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
   settings: {
     'import/resolver': {
@@ -41,4 +43,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['*.test.js', '*.spec.js'],
+      rules: {
+        'no-unused-expressions': 'off',
+      },
+    },
+  ],
 };

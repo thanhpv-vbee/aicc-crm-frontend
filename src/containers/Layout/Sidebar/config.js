@@ -36,6 +36,25 @@ export const sidebarMenu = [
     heading: 'payment',
     icon: <Icon>payments</Icon>,
     role: ['user'],
-    subMenu: [],
+    subMenu: [
+      {
+        key: 'Payment',
+        heading: 'recharge',
+        route: ROUTES.PAYMENT,
+        role: ['user'],
+      },
+      {
+        key: 'Price',
+        heading: 'quotation',
+        route: ROUTES.PRICE,
+        role: ['user'],
+      },
+      {
+        key: 'Bill',
+        heading: 'bill',
+        route: ROUTES.BILL,
+        role: ['user'],
+      },
+    ],
   },
 ];

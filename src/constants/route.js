@@ -12,4 +12,6 @@ export default {
   SCRIPT: '/script',
   CAMPAIGN: '/campaign',
   API: '/api',
+  BILL: '/bill',
+  PRICE: '/price',
 };

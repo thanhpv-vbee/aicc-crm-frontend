@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "pretty": false,
     "baseUrl": "./",
     "paths": {
       "*": ["./*/index"],

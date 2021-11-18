@@ -4,26 +4,35 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "deploy": "cross-env NODE_ENV=production node server",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "lint:check": "eslint . --ext=js,jsx;  exit 0",
+    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@date-io/date-fns": "v1",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@material-ui/pickers": "^3.3.10",
     "axios": "0.24.0",
+    "babel-jest": "26.6.0",
     "camelcase-keys": "7.0.1",
     "classnames": "^2.3.1",
     "cross-env": "7.0.3",
     "date-fns": "^2.0.0-beta.5",
     "dotenv": "10.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "express": "4.17.1",
     "i18next": "21.4.0",
     "i18next-browser-languagedetector": "6.1.2",
+    "i18next-xhr-backend": "^3.2.2",
+    "jest": "26.6.0",
     "nprogress": "0.2.0",
     "react": "17.0.1",
     "react-app-rewire-hot-loader": "2.0.1",
@@ -70,5 +79,23 @@
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom",
+    "verbose": true,
+    "clearMocks": true,
+    "collectCoverage": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "^@src(.*)$": "<rootDir>/src$1",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   }
 }
