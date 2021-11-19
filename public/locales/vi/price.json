@@ -1,0 +1,14 @@
+{
+  "quotation": "Bảng giá dịch vụ AI Call Center",
+  "no": "STT",
+  "typeCall": "Loại cuộc gọi",
+  "unitPrice": "Đơn giá dịch vụ (VNĐ/ block 30s)",
+  "excludeChargeCall": "Không bao gồm cước thoại",
+  "includeChargeCall": "Bao gồm cước thoại",
+  "note": "Chú ý",
+  "seeDetailHere": "Xem chi tiết tại đây",
+  "firstDescription": "Đơn giá áp dụng từ ngày 01/09/2021. Vbee có quyền thay đổi bảng giá này.",
+  "secondDescription": "Đơn giá dịch vụ trên không bao gồm cước thoại.",
+  "thirdDescription": "Khách hàng trả sau cam kết sử dụng tối thiểu 500.000/tháng.",
+  "fourthDescription": "Đơn giá đã bao gồm VAT (nếu có)."
+}

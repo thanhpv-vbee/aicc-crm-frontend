@@ -1,0 +1,18 @@
+[
+  {
+    "no": "1",
+    "type": "Dịch vụ AI Call Center IVR"
+  },
+  {
+    "no": "1.1",
+    "type": "Cuộc gọi nội dung thay đổi (Cá nhân hóa)",
+    "internal": "400",
+    "external": "650"
+  },
+  {
+    "no": "1.2",
+    "type": "Cuộc gọi nội dung cố định",
+    "internal": "300",
+    "external": "550"
+  }
+]

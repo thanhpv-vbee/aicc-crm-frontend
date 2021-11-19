@@ -4,6 +4,7 @@ import DashboardPage from '@src/pages/Dashboard';
 import ScriptPage from '@src/pages/Script';
 import CampaignPage from '@src/pages/Campaign';
 import PaymentPage from '@src/pages/Payment';
+import PricePage from '@src/pages/Price';
 import ROUTES from '@src/constants/route';
 
 export default [
@@ -51,7 +52,7 @@ export default [
   },
   {
     path: ROUTES.PRICE,
-    component: ScriptPage,
+    component: PricePage,
     exact: true,
     restricted: false,
     isPrivate: true,

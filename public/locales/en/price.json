@@ -1,0 +1,14 @@
+{
+  "quotation": "Quotation AI Call Center",
+  "no": "No.",
+  "typeCall": "Type call",
+  "unitPrice": "Service unit price (VND/block 30s)",
+  "excludeChargeCall": "Exclude charge call",
+  "includeChargeCall": "Include charge call",
+  "note": "Note",
+  "seeDetailHere": "See details here",
+  "firstDescription": "Prices are valid from September 1, 2021. Vbee reserves the right to change this price list.",
+  "secondDescription": "The above service price does not include voice charges",
+  "thirdDescription": "Postpaid customers commit to use at least 500,000/month",
+  "fourthDescription": "Unit price includes VAT (if any)."
+}
