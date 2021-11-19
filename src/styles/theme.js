@@ -39,8 +39,14 @@ const theme = createTheme({
   },
   overrides: {
     MuiButton: {
+      root: {
+        fontWeight: 'bold',
+      },
       contained: {
         boxShadow: 'none',
+      },
+      containedPrimary: {
+        color: COLOR.white,
       },
     },
   },

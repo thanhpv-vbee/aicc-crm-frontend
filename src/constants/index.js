@@ -1,6 +1,6 @@
 import ROUTES from './route';
-import STATUSES from './status';
+import STATUS from './status';
 
 export const A_WEEK = 7 * 24 * 60 * 60 * 1000;
 
-export { ROUTES, STATUSES };
+export { ROUTES, STATUS };
