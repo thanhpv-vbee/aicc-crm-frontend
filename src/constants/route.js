@@ -14,4 +14,5 @@ export default {
   API: '/api',
   BILL: '/bill',
   PRICE: '/price',
+  CREATE_SCRIPT: '/script/create',
 };

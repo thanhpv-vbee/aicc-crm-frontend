@@ -19,7 +19,7 @@ export const sidebarMenu = [
       {
         key: 'Script',
         heading: 'patternScript',
-        route: ROUTES.SCRIPT,
+        route: ROUTES.CREATE_SCRIPT,
         role: ['user'],
       },
     ],
