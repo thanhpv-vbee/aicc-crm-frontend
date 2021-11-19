@@ -8,5 +8,16 @@
   "rate": "Rate",
   "soundtrack": "Soundtrack",
   "expand": "Expand",
-  "collapse": "Collapse"
+  "collapse": "Collapse",
+  "callContent": "Call content",
+  "convertFromText": "Convert from text",
+  "uploadAudioFile": "Upload audio file",
+  "enterContentHere": "Enter content here",
+  "dragAndDropFile": "Drag and drop file here to upload or",
+  "clickHere": "click here",
+  "supportedAudioFile": "(only .mp3 or .wav formats under 5MB are supported)",
+  "tryListening": "Try listening",
+  "personalizedCard": "Personalized card",
+  "readingConvention": "Reading convention",
+  "newCard": "New card"
 }

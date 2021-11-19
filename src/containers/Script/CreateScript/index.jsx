@@ -12,6 +12,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
 import { ROUTES } from '@src/constants';
+import CallContent from '@src/components/CallContent';
 import VoiceSettings from '@src/components/VoiceSettings';
 
 import useStyles from './index.style';
@@ -60,6 +61,7 @@ const CreateScript = () => {
         </Button>
       </Grid>
       <VoiceSettings />
+      <CallContent />
     </div>
   );
 };

@@ -8,5 +8,16 @@
   "rate": "Tốc độ đọc",
   "soundtrack": "Nhạc nền",
   "expand": "Mở rộng",
-  "collapse": "Thu gọn"
+  "collapse": "Thu gọn",
+  "callContent": "Nội dung cuộc gọi",
+  "convertFromText": "Chuyển từ văn bản",
+  "uploadAudioFile": "Tải file ghi âm",
+  "enterContentHere": "Nhập nội dung ở đây",
+  "dragAndDropFile": "Kéo thả file tại đây để tải lên hoặc",
+  "clickHere": "bấm vào đây",
+  "supportedAudioFile": "(chỉ hỗ trợ định dạng .mp3 hoặc .wav dưới 5MB)",
+  "tryListening": "Nghe thử",
+  "personalizedCard": "Thẻ cá nhân hoá",
+  "readingConvention": "Cách đọc",
+  "newCard": "Thẻ mới"
 }
