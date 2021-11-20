@@ -1,0 +1,15 @@
+{
+  "status": "Trạng thái",
+  "campaignName": "Tên chiến dịch",
+  "lastCall": "Cuộc gọi gần nhất",
+  "notYetCall": "Số KH chưa gọi",
+  "createdTime": "Ngày tạo",
+  "init": "Khởi tạo",
+  "reviewing": "Đang đánh giá",
+  "done": "Đã xong",
+  "pause": "Tạm dừng",
+  "error": "Lỗi",
+  "running": "Running",
+  "confirmDeletion": "Xác nhận xoá",
+  "confirmQuestionDelete": "Bạn có chắc chắn xoá chiến dịch {{campaignName}} không? Thao tác này sẽ không thể hoàn lại được"
+}

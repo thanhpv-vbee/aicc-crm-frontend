@@ -25,4 +25,13 @@ const TRANSPARENT_COLOR = {
   light: 'rgba(186, 191, 199, 0.12)',
 };
 
-export { COLOR, TRANSPARENT_COLOR };
+const STATUS_COLOR = {
+  init: '#242424',
+  reviewing: '#6E6B7B',
+  done: '#28C76F',
+  pause: '#6E6B7B',
+  error: '#EA5455',
+  running: '#FC6634',
+};
+
+export { COLOR, TRANSPARENT_COLOR, STATUS_COLOR };

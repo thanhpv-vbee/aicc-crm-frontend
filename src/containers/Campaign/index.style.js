@@ -25,21 +25,19 @@ export default makeStyles((theme) => ({
     boxShadow: 'none',
   },
   button: {
-    color: '#fff',
-    fontWeight: 'bold',
     textTransform: 'none',
-    boxShadow: 'none',
-  },
-  pagination: {
-    '& .Mui-selected': {
-      color: 'white',
-    },
-  },
-  paginationText: {
-    fontWeight: 'bold',
-    color: theme.palette.text.secondary,
   },
   iconButton: {
     padding: '5px',
+  },
+  deleteIcon: {
+    color: '#EA5455',
+  },
+  status: {
+    fontWeight: 'bold',
+    marginRight: '5px',
+  },
+  warningIcon: {
+    color: '#EA5455',
   },
 }));

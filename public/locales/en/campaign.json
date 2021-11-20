@@ -1,0 +1,15 @@
+{
+  "status": "Status",
+  "campaignName": "Campaign Name",
+  "lastCall": "Last call",
+  "notYetCall": "Not yet call",
+  "createdTime": "Created time",
+  "init": "Initialize",
+  "reviewing": "Reviewing",
+  "done": "Done",
+  "pause": "Pause",
+  "error": "Error",
+  "running": "Running",
+  "confirmDeletion": "Confirm deletion",
+  "confirmQuestionDelete": "Are you sure delete campaign {{campaignName}}? This action is non-refundable"
+}
