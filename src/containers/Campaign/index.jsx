@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SearchIcon from '@material-ui/icons/Search';
 import {
   Grid,
   InputAdornment,
@@ -10,19 +9,21 @@ import {
   IconButton,
   Typography,
 } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 import SyncIcon from '@material-ui/icons/Sync';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import CustomDatePicker from '@src/components/CustomDatePicker';
 import TuneIcon from '@material-ui/icons/Tune';
-import CustomTable from '@src/components/CustomTable';
-import { PAGINATION_LIMIT, STATUS } from '@src/constants';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import WarningIcon from '@material-ui/icons/Warning';
 import { useTranslation } from 'react-i18next';
+
+import { PAGINATION_LIMIT, STATUS } from '@src/constants';
 import { STATUS_COLOR } from '@src/styles/color';
+import CustomTable from '@src/components/CustomTable';
+import CustomDatePicker from '@src/components/CustomDatePicker';
 import Popup from '@src/components/Popup';
 import useStyles from './index.style';
 
