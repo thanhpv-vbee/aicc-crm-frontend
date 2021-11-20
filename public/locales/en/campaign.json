@@ -1,4 +1,7 @@
 {
+  "search": "Search",
+  "scriptType": "Script type",
+  "createCampaign": "Create campaign",
   "status": "Status",
   "campaignName": "Campaign Name",
   "lastCall": "Last call",
@@ -11,5 +14,8 @@
   "error": "Error",
   "running": "Running",
   "confirmDeletion": "Confirm deletion",
-  "confirmQuestionDelete": "Are you sure delete campaign {{campaignName}}? This action is non-refundable"
+  "confirmQuestionDelete": "Are you sure delete campaign {{campaignName}}? This action is non-refundable",
+  "permanent": "Permanent",
+  "personalization": "Personalization",
+  "voicebot": "Voice bot"
 }

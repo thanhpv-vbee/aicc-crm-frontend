@@ -65,40 +65,44 @@ export const campaigns = [
   },
 ];
 
-export const scripts = [
+export const scriptsData = [
   {
     id: 1,
-    name: 'Kịch bản 1',
+    name: 'PERMANENT',
   },
   {
     id: 2,
-    name: 'Kịch bản 2',
+    name: 'PERSONALIZATION',
   },
   {
     id: 3,
-    name: 'Kịch bản 3',
-  },
-  {
-    id: 4,
-    name: 'Kịch bản 4',
+    name: 'VOICEBOT',
   },
 ];
 
-export const statuses = [
+export const statusData = [
   {
     id: 1,
-    name: 'Trạng thái 1',
+    name: 'INIT',
   },
   {
     id: 2,
-    name: 'Trạng thái 2',
+    name: 'REVIEWING',
   },
   {
     id: 3,
-    name: 'Trạng thái 3',
+    name: 'RUNNING',
   },
   {
     id: 4,
-    name: 'Trạng thái 4',
+    name: 'PAUSE',
+  },
+  {
+    id: 5,
+    name: 'DONE',
+  },
+  {
+    id: 6,
+    name: 'ERROR',
   },
 ];

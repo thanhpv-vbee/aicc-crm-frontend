@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, MenuItem, withStyles } from '@material-ui/core';
 
 export default makeStyles((theme) => ({
   campaign: {
@@ -18,6 +18,9 @@ export default makeStyles((theme) => ({
       fontSize: '14px',
       padding: '10.5px',
     },
+  },
+  arrowIcon: {
+    color: '#BABFC7',
   },
   resetButton: {
     minWidth: '50px',
@@ -41,3 +44,22 @@ export default makeStyles((theme) => ({
     color: '#EA5455',
   },
 }));
+
+export const StyledMenuItem = withStyles((theme) => ({
+  root: {
+    '&:focus': {
+      color: '#fff',
+      backgroundColor: theme.palette.primary.main,
+      '&:hover': {
+        backgroundColor: theme.palette.primary.main,
+        color: '#fff',
+      },
+    },
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+        color: theme.palette.primary.light,
+      },
+    },
+  },
+}))(MenuItem);

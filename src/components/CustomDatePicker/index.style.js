@@ -11,7 +11,11 @@ export default makeStyles(() => ({
       '& input': {
         padding: '10.5px 0',
         height: 'fit-content',
+        color: '#6E6B7B',
       },
+    },
+    '& .MuiIconButton-label': {
+      color: '#BABFC7',
     },
   },
 }));

@@ -1,8 +1,8 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import {
   Grid,
   InputAdornment,
-  MenuItem,
   TextField,
   Box,
   Button,
@@ -19,15 +19,16 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import WarningIcon from '@material-ui/icons/Warning';
 import { useTranslation } from 'react-i18next';
+import camelCase from 'camelcase';
 
-import { PAGINATION_LIMIT, STATUS } from '@src/constants';
 import { STATUS_COLOR } from '@src/styles/color';
 import CustomTable from '@src/components/CustomTable';
 import CustomDatePicker from '@src/components/CustomDatePicker';
 import Popup from '@src/components/Popup';
-import useStyles from './index.style';
+import { PAGINATION_LIMIT, SCRIPT_TYPES, STATUS } from '@src/constants';
+import useStyles, { StyledMenuItem } from './index.style';
 
-import { campaigns, scripts, statuses } from './data';
+import { campaigns, scriptsData, statusData } from './data';
 
 const Campaign = () => {
   const classes = useStyles();
@@ -107,9 +108,14 @@ const Campaign = () => {
     },
   ];
 
+  const renderStatusOnSelectBox = (status) => t(camelCase(STATUS[status]));
+
+  const renderScriptType = (scriptType) =>
+    t(camelCase(SCRIPT_TYPES[scriptType]));
+
   let color = '';
   let text = '';
-  const renderStatus = (status) => {
+  const renderStatusOnTable = (status) => {
     switch (status) {
       case STATUS.INIT:
         color = STATUS_COLOR.init;
@@ -176,7 +182,7 @@ const Campaign = () => {
                 size="small"
                 className={classes.textField}
                 variant="outlined"
-                placeholder="Tìm kiếm"
+                placeholder={t('search')}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -192,12 +198,12 @@ const Campaign = () => {
                 className={classes.textField}
                 variant="outlined"
                 select
-                label="Loại kịch bản"
+                label={t('scriptType')}
               >
-                {scripts.map((script) => (
-                  <MenuItem key={script.id} value={script.name}>
-                    {script.name}
-                  </MenuItem>
+                {scriptsData.map((script) => (
+                  <StyledMenuItem key={script.id} value={script.name}>
+                    {renderScriptType(script.name)}
+                  </StyledMenuItem>
                 ))}
               </TextField>
             </Grid>
@@ -207,12 +213,12 @@ const Campaign = () => {
                 className={classes.textField}
                 variant="outlined"
                 select
-                label="Trạng thái"
+                label={t('status')}
               >
-                {statuses.map((status) => (
-                  <MenuItem key={status.id} value={status.name}>
-                    {status.name}
-                  </MenuItem>
+                {statusData.map((status) => (
+                  <StyledMenuItem key={status.id} value={status.name}>
+                    {renderStatusOnSelectBox(status.name)}
+                  </StyledMenuItem>
                 ))}
               </TextField>
             </Grid>
@@ -226,7 +232,7 @@ const Campaign = () => {
                 style={{ display: 'flex', justifyContent: 'center' }}
               >
                 <Box display="flex" alignItems="center">
-                  <ArrowForwardIcon />
+                  <ArrowForwardIcon className={classes.arrowIcon} />
                 </Box>
               </Grid>
               <Grid item xs={5}>
@@ -251,7 +257,7 @@ const Campaign = () => {
                 color="primary"
                 className={classes.button}
               >
-                Tạo chiến dịch mới
+                {t('createCampaign')}
               </Button>
             </Grid>
           </Grid>
@@ -260,7 +266,7 @@ const Campaign = () => {
               <CustomTable
                 items={campaigns.map((campaign) => ({
                   ...campaign,
-                  status: renderStatus(campaign.status),
+                  status: renderStatusOnTable(campaign.status),
                 }))}
                 heads={heads}
                 actions={actions}
