@@ -2,5 +2,6 @@
   "note": "Lưu ý",
   "confirm": "Xác nhận",
   "goBack": "Quay lại",
-  "areYouSureWithDecision": "Bạn có chắc với quyết định này?"
+  "confirmQuestion": "Bạn có chắc với quyết định này?",
+  "paginationText": "Hiển thị từ {{start}} đến {{end}} của {{total}}"
 }

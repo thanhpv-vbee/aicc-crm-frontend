@@ -2,5 +2,6 @@
   "note": "Note",
   "confirm": "Confirm",
   "goBack": "Go back",
-  "areYouSureWithDecision": "Are you sure with this decision?"
+  "confirmQuestion": "Are you sure with this decision?",
+  "paginationText": "Showing {{start}} to {{end}} of {{total}}"
 }

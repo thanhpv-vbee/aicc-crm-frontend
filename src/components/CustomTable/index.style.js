@@ -1,12 +1,15 @@
 import { makeStyles, TableCell, withStyles } from '@material-ui/core';
+import { COLOR } from '@src/styles/color';
 
 export const StyledTableCell = withStyles(() => ({
   root: {
     borderBottom: '1px solid rgba(224, 224, 224, 1)',
+    color: COLOR.bodyText,
   },
   head: {
     backgroundColor: '#F6F9FC',
     fontWeight: '600',
+    fontSize: '15px',
     textTransform: 'uppercase',
     color: '#6E6B7B',
   },
@@ -16,15 +19,26 @@ export const StyledTableCell = withStyles(() => ({
 }))(TableCell);
 
 export default makeStyles(() => ({
-  status: {
-    color: (props) => props.color,
-    fontWeight: 'bold',
-    marginRight: '5px',
-  },
-  warningIcon: {
-    color: '#EA5455',
-  },
   iconButton: {
     padding: '5px',
+    background: '#FFFFFF',
+    color: '#BABFC7',
+    '&:hover': {
+      color: '#6E6B7B',
+      background: 'none',
+    },
+  },
+  paginationText: {
+    color: COLOR.light,
+    fontWeight: 600,
+  },
+  pagination: {
+    '& .Mui-selected': {
+      color: '#FFFFFF',
+    },
+  },
+  tableCell: {
+    fontWeight: '500',
+    fontSize: '16px',
   },
 }));
