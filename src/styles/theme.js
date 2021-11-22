@@ -49,6 +49,19 @@ const theme = createTheme({
         color: COLOR.white,
       },
     },
+    MuiPickersToolbarText: {
+      toolbarTxt: {
+        color: COLOR.white,
+      },
+      toolbarBtnSelected: {
+        color: COLOR.white,
+      },
+    },
+    MuiPickersDay: {
+      daySelected: {
+        color: COLOR.white,
+      },
+    },
   },
 });
 

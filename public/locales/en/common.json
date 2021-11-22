@@ -3,5 +3,6 @@
   "confirm": "Confirm",
   "goBack": "Go back",
   "confirmQuestion": "Are you sure with this decision?",
-  "paginationText": "Showing {{start}} to {{end}} of {{total}}"
+  "paginationText": "Showing {{start}} to {{end}} of {{total}}",
+  "to": "To"
 }
