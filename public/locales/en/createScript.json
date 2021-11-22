@@ -19,5 +19,7 @@
   "tryListening": "Try listening",
   "personalizedCard": "Personalized card",
   "readingConvention": "Reading convention",
-  "newCard": "New card"
+  "newCard": "New card",
+  "feedbackKey": "Feedback key",
+  "removeAll": "Remove all"
 }

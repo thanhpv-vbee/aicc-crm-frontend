@@ -13,6 +13,7 @@ import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
 import { ROUTES } from '@src/constants';
 import CallContent from '@src/components/CallContent';
+import CallIvr from '@src/components/CallIvr';
 import VoiceSettings from '@src/components/VoiceSettings';
 
 import useStyles from './index.style';
@@ -62,6 +63,7 @@ const CreateScript = () => {
       </Grid>
       <VoiceSettings />
       <CallContent />
+      <CallIvr />
     </div>
   );
 };
