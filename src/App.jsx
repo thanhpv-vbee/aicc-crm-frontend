@@ -1,19 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ThemeProvider } from '@material-ui/core';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
+import { ThemeProvider } from '@mui/material/styles';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import store from './redux/store';
 import AppRouter from './router';
 import theme from './styles/theme';
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Provider store={store()}>
         <AppRouter />
       </Provider>
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   </ThemeProvider>
 );
 

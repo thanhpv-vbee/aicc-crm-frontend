@@ -1,12 +1,12 @@
-import { makeStyles } from '@material-ui/core';
+import styled from 'styled-components';
 
-export default makeStyles(() => ({
-  root: {
-    border: '1px dashed transparent',
-  },
-  dragActive: {
-    opacity: 0.5,
-    border: '1px dashed #B9B9C3',
-    boxSizing: 'border-box',
-  },
-}));
+export const StyledDropzone = styled.div`
+  .root {
+    border: 1px dashed transparent;
+  }
+  .dragActive {
+    opacity: 0.5;
+    border: 1px dashed #b9b9c3;
+    box-sizing: border-box;
+  }
+`;

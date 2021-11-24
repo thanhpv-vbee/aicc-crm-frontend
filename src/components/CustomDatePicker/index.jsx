@@ -1,23 +1,17 @@
 import React from 'react';
-import { KeyboardDateTimePicker } from '@material-ui/pickers';
-import useStyles from './index.style';
+import { TextField } from '@mui/material';
+import { DateTimePicker } from '@mui/lab';
+import { StyledCustomDatePicker } from './index.style';
 
 function CustomDatePicker(props) {
-  const classes = useStyles();
   return (
-    <div className={classes.dateTimePicker}>
-      <KeyboardDateTimePicker
-        autoOk
-        variant="inline"
-        inputVariant="outlined"
-        format="hh:mm - dd/MM/yyyy"
+    <StyledCustomDatePicker>
+      <DateTimePicker
+        renderInput={(params) => <TextField {...params} size="small" />}
         InputAdornmentProps={{ position: 'start' }}
-        placeholder="--/--/----"
-        mask="--/--/----"
-        maskChar="-"
         {...props}
       />
-    </div>
+    </StyledCustomDatePicker>
   );
 }
 

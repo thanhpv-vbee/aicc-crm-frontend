@@ -1,17 +1,15 @@
-import { makeStyles } from '@material-ui/core';
+import styled from 'styled-components';
 
-export default makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-  },
-  main: {
-    flex: 1,
-    padding: '15px 30px',
-  },
-  navbar: {
-    marginBottom: '20px',
-    background: '#fff',
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.1)',
-  },
-}));
+export const StyledLayout = styled.div`
+  display: flex;
+  .main {
+    flex: 1;
+    padding: 15px 30px;
+  }
+  .navbar {
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: theme.shape.borderRadius;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  }
+`;

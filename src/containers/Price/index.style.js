@@ -1,63 +1,63 @@
-import { TableCell, withStyles } from '@material-ui/core';
+import styled from 'styled-components';
+import { BORDER_RADIUS } from '@src/styles/config';
+import { TableCell } from '@mui/material';
 
-export const StyledTableCell = withStyles(() => ({
-  root: {
-    borderBottom: '1px solid rgba(224, 224, 224, 1)',
-    fontSize: '0.9rem',
-  },
-  head: {
-    backgroundColor: '#F6F9FC',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    color: '#6E6B7B',
-  },
-  body: {
-    fontSize: 16,
-  },
-}))(TableCell);
+export const StyledTableCell = styled(TableCell)`
+  &.muiTablecell-root {
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    font-size: 0.9rem;
+  }
+  &.MuiTableCell-head {
+    background-color: #f6f9fc;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6e6b7b;
+  }
+  &.MuiTableCell-body {
+    font-size: 16px;
+  }
+`;
 
-const priceStyle = (theme) => ({
-  wrapper: {
-    background: '#fff',
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.1)',
-    padding: '25px',
-    minHeight: '650px',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  header: {
-    margin: 0,
-    paddingBottom: '50px',
-    fontWeight: 500,
-  },
-  main: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    flexGrow: 1,
-  },
-  tableCellHeader: {
-    border: 'none',
-  },
-  footer: {
-    fontWeight: 500,
-  },
-  note: {
-    margin: 0,
-  },
-  noteList: {
-    marginTop: '5px',
-    listStyle: `square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==')`,
-    paddingInlineStart: 0,
+export const StyledPrice = styled.div`
+  background: #fff;
+  border-radius: ${BORDER_RADIUS};
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
 
-    '& li': {
-      marginBottom: '5px',
-    },
-    '& a': {
-      color: '#FC6634',
-    },
-  },
-});
-
-export default priceStyle;
+  .header {
+    margin: 0;
+    padding-bottom: 50px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .tableCellHeader {
+    border: none;
+  }
+  .footer {
+    font-weight: 500;
+  }
+  .note {
+    margin: 0;
+  }
+  .noteList {
+    margin-top: 5px;
+    list-style: square inside
+      url(data:image/gif;base64;R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==);
+    padding-inline-start: 0;
+    &li {
+      margin-bottom: 5px;
+    }
+    &a {
+      color: #fc6634;
+    }
+  }
+`;

@@ -1,10 +1,9 @@
 import React, { useState, useEffect, createRef } from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import useStyles from './index.style';
+import { StyledLayout } from './index.style';
 
 export default function Layout({ children }) {
-  const classes = useStyles();
   const mainPanel = createRef();
 
   useEffect(() => {
@@ -19,14 +18,14 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className={classes.container}>
+    <StyledLayout>
       <Sidebar collapsed={collapsed} toggle={toggle} />
-      <div className={classes.main} ref={mainPanel}>
-        <div className={classes.navbar}>
+      <div className="main" ref={mainPanel}>
+        <div className="navbar">
           <Navbar />
         </div>
         {children}
       </div>
-    </div>
+    </StyledLayout>
   );
 }

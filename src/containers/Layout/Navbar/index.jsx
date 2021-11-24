@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import {
   Button,
@@ -11,9 +10,9 @@ import {
   Box,
   ListItemIcon,
   IconButton,
-} from '@material-ui/core';
+} from '@mui/material';
 import i18n from '@src/languages';
-import useStyles from './index.style';
+import { StyledNavbar } from './index.style';
 
 const userPattern = {
   avatar:
@@ -23,13 +22,12 @@ const userPattern = {
 };
 
 const languages = [
-  { value: 'en-US', label: 'English', iconPath: 'vi-flag.svg' },
+  { value: 'en-US', label: 'English', iconPath: 'en-flag.svg' },
   { value: 'vi', label: 'Vietnamese', iconPath: 'vi-flag.svg' },
 ];
 
 const CustomMenu = ({ anchorEl, handleClose, items, handleClick }) => {
   const { t } = useTranslation();
-  const classes = useStyles();
   return (
     <Menu
       anchorEl={anchorEl}
@@ -42,7 +40,7 @@ const CustomMenu = ({ anchorEl, handleClose, items, handleClick }) => {
     >
       {items.map((item) => (
         <MenuItem key={item.value} onClick={() => handleClick(item.value)}>
-          <ListItemIcon className={classes.menuItemIcon}>
+          <ListItemIcon className="menuItemIcon">
             <img src={`/img/${item.iconPath}`} alt={item.value} />
           </ListItemIcon>
           <Typography variant="inherit"> {t(item.label)}</Typography>
@@ -54,7 +52,6 @@ const CustomMenu = ({ anchorEl, handleClose, items, handleClick }) => {
 
 const LanguageSelect = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleChangeLanguage = (value) => {
@@ -81,13 +78,13 @@ const LanguageSelect = () => {
       <Button
         color="inherit"
         aria-haspopup="true"
-        className={classes.langBtn}
+        className="langBtn"
         startIcon={
           <img src={`/img/${getLanguageIcon(i18n.language)}`} alt="diamond" />
         }
         onClick={handleOpenLanguage}
       >
-        <Typography className={classes.langText}>{t(i18n.language)}</Typography>
+        <Typography className="langText">{t(i18n.language)}</Typography>
       </Button>
       <CustomMenu
         anchorEl={anchorEl}
@@ -101,13 +98,12 @@ const LanguageSelect = () => {
 
 const Account = ({ user = userPattern }) => {
   const { t } = useTranslation();
-  const classes = useStyles();
 
   return (
-    <div className={classes.account}>
-      <div className={classes.avatarBox}>
-        <img src={user.avatar} alt="avatar" className={classes.avatar} />
-        <div className={classes.statusDot} />
+    <div className="account">
+      <div className="avatarBox">
+        <img src={user.avatar} alt="avatar" className="avatar" />
+        <div className="statusDot" />
       </div>
       <Box
         display="flex"
@@ -115,12 +111,8 @@ const Account = ({ user = userPattern }) => {
         justifyContent="center"
         alignItems="flex-start"
       >
-        <Typography className={classNames(classes.text, classes.nameText)}>
-          {user.name}
-        </Typography>
-        <Typography className={classNames(classes.text, classes.profileText)}>
-          {t('profile')}
-        </Typography>
+        <Typography className="text nameText">{user.name}</Typography>
+        <Typography className="text profileText">{t('profile')}</Typography>
       </Box>
     </div>
   );
@@ -128,52 +120,45 @@ const Account = ({ user = userPattern }) => {
 
 const Navbar = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
   return (
-    <div className={classes.container}>
-      <div className={classes.content}>
+    <StyledNavbar>
+      <div className="content">
         <Button
           variant="contained"
           color="primary"
-          className={classes.button}
+          className="button"
           startIcon={<img src="/img/diamond-icon.svg" alt="diamond" />}
         >
           {t('recharge')}
         </Button>
-        <div className={classes.balanceBox}>
-          <Typography className={classNames(classes.text, classes.titleText)}>
+        <div className="balanceBox">
+          <Typography className="text titleText">
             {t('remainBalance')}:
           </Typography>
-          <Typography className={classNames(classes.text, classes.valueText)}>
-            23.029.401
-          </Typography>
+          <Typography className="text valueText">23.029.401</Typography>
         </div>
       </div>
-      <div className={classNames(classes.content, classes.rightContainer)}>
+      <div className="content rightContainer">
         <IconButton aria-label="notification" size="medium">
           <Badge
             badgeContent={4}
             color="primary"
             classes={{
-              badge: classes.badge,
+              badge: 'badge',
             }}
           >
             <img src="/img/notification-icon.svg" alt="notification" />
           </Badge>
         </IconButton>
         <LanguageSelect />
-        <div className={classes.phone}>
+        <div className="phone">
           <IconButton aria-label="phone" size="medium">
-            <img
-              src="/img/phone-icon.svg"
-              alt="phone"
-              className={classes.phoneImage}
-            />
+            <img src="/img/phone-icon.svg" alt="phone" className="phoneImage" />
           </IconButton>
         </div>
         <Account />
       </div>
-    </div>
+    </StyledNavbar>
   );
 };
 

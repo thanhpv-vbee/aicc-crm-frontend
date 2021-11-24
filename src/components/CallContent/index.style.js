@@ -1,112 +1,112 @@
-import { makeStyles } from '@material-ui/core';
+import { BORDER_RADIUS } from '@src/styles/config';
+import styled from 'styled-components';
 
-export default makeStyles((theme) => ({
-  container: {
-    marginTop: '20px',
-    padding: '18px 20px 20px',
-    backgroundColor: '#FFFFFF',
-    borderRadius: '6px',
-    boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.1)',
-  },
-  heading: {
-    color: '#6E6B7B',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    marginTop: '0px',
-    marginBottom: '16px',
-  },
-  border: {
-    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.08)',
-  },
-  editorContainer: {
-    padding: '15px 12px 12px 17px',
-  },
-  textareaContent: {
-    width: '100%',
-    height: '100%',
-    cursor: 'text',
-    fontWeight: '400',
-    lineHeight: '1.5',
-    verticalAlign: 'baseline',
-    paddingBottom: '14px',
-    fontSize: '16px',
-    border: 'none',
-    background: 'transparent',
-    resize: 'none',
-    '&,&:focus': {
-      outline: 'none',
-    },
-  },
-  audioContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '48px 17px',
-  },
-  listeningButton: {
-    borderRadius: '6px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-  },
-  labelAudio: {
-    fontSize: '16px',
-    fontWeight: 900,
-    color: '#FC6634',
-    '&:hover': {
-      cursor: 'pointer',
-    },
-  },
-  audioTitle: {
-    fontSize: '16px',
-    fontWeight: 900,
-    color: '#8898AA',
-  },
-  fileType: {
-    fontSize: '12px',
-    fontWeight: 900,
-    color: '#8898AA',
-    marginTop: '17px 0px 0px',
-  },
-  gridContainer: {
-    display: 'grid',
-    gridTemplateColumns: '3fr 2fr 36px',
-    columnGap: '20px',
-  },
-  cardContent: {
-    height: '230px',
-    overflowY: 'auto',
-    '&::-webkit-scrollbar': {
-      width: '5px',
-    },
-    '&::-webkit-scrollbar-track': {
-      borderRadius: '5px',
-      backgroundColor: '#E4E2EB',
-    },
-    '&::-webkit-scrollbar-thumb': {
-      backgroundColor: '#FC6634',
-      borderRadius: '5px',
-    },
-  },
-  dashedBorder: {
-    '& .MuiOutlinedInput-notchedOutline': {
-      border: '1px dashed #C4C4C4',
-    },
-  },
-  textField: {
-    backgroundColor: 'white',
-    height: 'fit-content',
-    borderRadius: theme.shape.borderRadius,
-    '& .MuiInputBase-input': {
-      paddingTop: '10.5px',
-      paddingBottom: '10.5px',
-    },
-  },
-  clearButton: {
-    color: '#EA5455',
-    padding: '5px',
-  },
-  mb10: {
-    marginBottom: '10px',
-  },
-}));
+export const StyledCallContent = styled.div`
+  margin-top: 20px;
+  padding: 18px 20px 20px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+
+  .heading {
+    color: #6e6b7b;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 16px;
+  }
+  .border {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  .editorContainer {
+    padding: 15px 12px 12px 17px;
+  }
+  .textareaContent {
+    width: 100%;
+    height: 100%;
+    cursor: text;
+    font-weight: 400;
+    line-height: 1.5;
+    vertical-align: baseline;
+    padding-bottom: 14px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  .audioContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 17px;
+  }
+  .listeningButton {
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .labelAudio {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fc6634;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .audioTitle {
+    font-size: 16px;
+    font-weight: 900;
+    color: #8898aa;
+  }
+  .fileType {
+    font-size: 12px;
+    font-weight: 900;
+    color: #8898aa;
+    margin-top: 17px 0px 0px;
+  }
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 3fr 2fr 36px;
+    column-gap: 20px;
+  }
+  .cardContent {
+    height: 230px;
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: #e4e2eb;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #fc6634;
+      border-radius: 5px;
+    }
+  }
+  .dashedBorder {
+    &.MuiOutlinedInput-notchedOutline {
+      border: 1px dashed #c4c4c4;
+    }
+  }
+  .textField {
+    background-color: white;
+    height: fit-content;
+    border-radius: ${BORDER_RADIUS};
+    &.MuiInputBase-input {
+      padding-top: 10.5px;
+      padding-bottom: 10.5px;
+    }
+  }
+  .clearButton {
+    color: #ea5455;
+    padding: 5px;
+  }
+  .mb10 {
+    margin-bottom: 10px;
+  }
+`;

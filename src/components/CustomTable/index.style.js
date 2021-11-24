@@ -1,44 +1,41 @@
-import { makeStyles, TableCell, withStyles } from '@material-ui/core';
+import styled from 'styled-components';
+import { TableCell } from '@mui/material';
 import { COLOR } from '@src/styles/color';
 
-export const StyledTableCell = withStyles(() => ({
-  root: {
-    borderBottom: '1px solid rgba(224, 224, 224, 1)',
-    color: COLOR.bodyText,
-  },
-  head: {
-    backgroundColor: '#F6F9FC',
-    fontWeight: '600',
-    fontSize: '15px',
-    textTransform: 'uppercase',
-    color: '#6E6B7B',
-  },
-  body: {
-    fontSize: 16,
-  },
-}))(TableCell);
+export const StyledTableCell = styled(TableCell)`
+  &.MuiTableCell-head {
+    background-color: #f6f9fc;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #6e6b7b;
+  }
+  &.MuiTableCell-body {
+    font-size: 16px;
+  }
+  .iconButton {
+    padding: 5px;
+    background: #ffffff;
+    color: #babfc7;
+    :hover {
+      color: #6e6b7b;
+      background: none;
+    }
+  }
+`;
 
-export default makeStyles(() => ({
-  iconButton: {
-    padding: '5px',
-    background: '#FFFFFF',
-    color: '#BABFC7',
-    '&:hover': {
-      color: '#6E6B7B',
-      background: 'none',
-    },
-  },
-  paginationText: {
-    color: COLOR.light,
-    fontWeight: 600,
-  },
-  pagination: {
-    '& .Mui-selected': {
-      color: '#FFFFFF',
-    },
-  },
-  tableCell: {
-    fontWeight: '500',
-    fontSize: '16px',
-  },
-}));
+export const StyledCustomTable = styled.div`
+  .paginationText {
+    color: ${COLOR.light};
+    font-weight: 600;
+  }
+  .pagination {
+    .Mui-selected {
+      color: #fff;
+    }
+  }
+  .tableCell {
+    font-weight: 500;
+    font-size: 16px;
+  }
+`;

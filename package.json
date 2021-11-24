@@ -12,6 +12,13 @@
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0"
   },
   "dependencies": {
+    "@emotion/react": "11.5.0",
+    "@emotion/styled": "11.3.0",
+    "@mui/icons-material": "5.0.5",
+    "@mui/lab": "5.0.0-alpha.54",
+    "@mui/material": "5.0.6",
+    "@mui/styled-engine-sc": "5.0.4",
+    "@mui/styles": "5.0.2",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@date-io/date-fns": "v1",

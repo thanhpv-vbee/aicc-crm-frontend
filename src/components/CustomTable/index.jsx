@@ -11,47 +11,44 @@ import {
   Box,
   Typography,
   TableCell,
-} from '@material-ui/core';
-import Pagination from '@material-ui/lab/Pagination';
-import useStyles, { StyledTableCell } from './index.style';
+  Pagination,
+} from '@mui/material';
+import { StyledCustomTable, StyledTableCell } from './index.style';
 
-const CustomTableRow = ({ item, heads, actions, index }) => {
-  const classes = useStyles();
-  return (
-    <TableRow key={item.id}>
-      {heads.map((head) => {
-        if (item.id === 'totalRow') {
-          return (
-            <TableCell className={classes.tableCell} align={head.align}>
-              {(head.valueName !== 'actions' &&
-                head.valueName !== 'no' &&
-                item[head.valueName]) ||
-                ' '}
-            </TableCell>
-          );
-        }
+const CustomTableRow = ({ item, heads, actions, index }) => (
+  <TableRow key={item.id}>
+    {heads.map((head) => {
+      if (item.id === 'totalRow') {
         return (
-          <StyledTableCell align={head.align}>
-            {head.valueName === 'no' && index}
-            {head.valueName === 'actions' &&
-              actions.length &&
-              actions.map((action) => (
-                <IconButton
-                  className={classes.iconButton}
-                  onClick={() => action.onClick(item.id)}
-                >
-                  {action.icon}
-                </IconButton>
-              ))}
-            {head.valueName !== 'actions' &&
+          <TableCell className="tableCell" align={head.align}>
+            {(head.valueName !== 'actions' &&
               head.valueName !== 'no' &&
-              item[head.valueName]}
-          </StyledTableCell>
+              item[head.valueName]) ||
+              ' '}
+          </TableCell>
         );
-      })}
-    </TableRow>
-  );
-};
+      }
+      return (
+        <StyledTableCell align={head.align}>
+          {head.valueName === 'no' && index}
+          {head.valueName === 'actions' &&
+            actions.length &&
+            actions.map((action) => (
+              <IconButton
+                className="iconButton"
+                onClick={() => action.onClick(item.id)}
+              >
+                {action.icon}
+              </IconButton>
+            ))}
+          {head.valueName !== 'actions' &&
+            head.valueName !== 'no' &&
+            item[head.valueName]}
+        </StyledTableCell>
+      );
+    })}
+  </TableRow>
+);
 
 const CustomTable = ({
   heads,
@@ -60,11 +57,10 @@ const CustomTable = ({
   pagination,
   onChangePagination,
 }) => {
-  const classes = useStyles();
   const { t } = useTranslation('common');
 
   return (
-    <>
+    <StyledCustomTable>
       <TableContainer>
         <Table>
           <TableHead>
@@ -94,7 +90,7 @@ const CustomTable = ({
         justifyContent="space-between"
         mt={2}
       >
-        <Typography className={classes.paginationText}>
+        <Typography className="paginationText">
           {t('paginationText', {
             start: (pagination.page - 1) * pagination.limit + 1,
             end: pagination.page * pagination.limit,
@@ -103,13 +99,13 @@ const CustomTable = ({
         </Typography>
         <Pagination
           color="primary"
-          className={classes.pagination}
+          className="pagination"
           page={pagination.page}
           count={pagination.totalPages}
           onChange={(e, page) => onChangePagination(page)}
         />
       </Box>
-    </>
+    </StyledCustomTable>
   );
 };
 

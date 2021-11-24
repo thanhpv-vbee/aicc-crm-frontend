@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import * as uuid from 'uuid';
 import { useTranslation } from 'react-i18next';
-import { Button, Grid, IconButton, Popover, Tooltip } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import ClearIcon from '@material-ui/icons/Clear';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import { Button, Grid, IconButton, Popover, Tooltip } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import ClearIcon from '@mui/icons-material/Clear';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import useStyles from './index.style';
+import { StyledCallIvr } from './index.style';
 import { numpad } from './data';
 
 const CallIvr = () => {
-  const classes = useStyles();
   const { t } = useTranslation(['createScript']);
 
   const [keys, setKeys] = useState([]);
@@ -57,17 +55,17 @@ const CallIvr = () => {
   const id = open ? 'numpad-popover' : undefined;
 
   return (
-    <div className={classes.container}>
+    <StyledCallIvr>
       <Grid container justifyContent="space-between" alignItems="center">
-        <div className={classes.header}>
-          <h3 className={classes.headerText}>{t('feedbackKey')}</h3>
+        <div className="header">
+          <h3 className="headerText">{t('feedbackKey')}</h3>
           <Tooltip title="title" placement="top">
             <HelpOutlineIcon color="primary" />
           </Tooltip>
         </div>
         {keys.length > 0 && (
           <Button
-            className={classes.deleteButton}
+            className="deleteButton"
             color="primary"
             onClick={handleRemoveAll}
           >
@@ -80,17 +78,17 @@ const CallIvr = () => {
           {keys.map((item) => {
             const { id: keyId, key } = item;
             return (
-              <div key={keyId} className={classes.keyContainer}>
+              <div key={keyId} className="keyContainer">
                 <Button
-                  className={classNames(classes.keyButton, {
-                    [classes.keyButtonSelected]: keyId === currentKey,
-                  })}
+                  className={`keyButton ${
+                    keyId === currentKey && 'keyButtonSelected'
+                  }`}
                   onClick={() => handleSelectKey(item)}
                 >
                   {key}
                 </Button>
                 <IconButton
-                  className={classes.clearButton}
+                  className="clearButton"
                   onClick={() => handleRemoveKey(keyId)}
                 >
                   <ClearIcon />
@@ -98,16 +96,16 @@ const CallIvr = () => {
               </div>
             );
           })}
-          <div className={classes.keyContainer}>
+          <div className="keyContainer">
             <Button
-              className={classNames(classes.keyButton, classes.keyButtonAdd)}
+              className="keyButton keyButtonAdd"
               aria-describedby={id}
               onClick={handleClick}
             >
               <AddIcon />
             </Button>
             <Popover
-              classes={{ paper: classes.paper }}
+              classes={{ paper: 'paper' }}
               id={id}
               open={open}
               anchorEl={anchorEl}
@@ -122,14 +120,14 @@ const CallIvr = () => {
               }}
             >
               <div
-                className={classes.numpadContainer}
+                className="numpadContainer"
                 autoFocusItem={open}
                 id="composition-menu"
                 aria-labelledby="composition-button"
               >
                 {numpad.map((key) => (
                   <Button
-                    className={classes.numpad}
+                    className="numpad"
                     key={key}
                     onClick={() => handleAddKey(key)}
                   >
@@ -146,7 +144,7 @@ const CallIvr = () => {
           </Grid>
         )}
       </Grid>
-    </div>
+    </StyledCallIvr>
   );
 };
 

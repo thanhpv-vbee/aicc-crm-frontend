@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 import { COLOR } from './color';
 
 const theme = createTheme({
@@ -35,31 +35,38 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'San Francisco Display',
-    fontSize: 11,
   },
-  overrides: {
+  components: {
     MuiButton: {
-      root: {
-        fontWeight: 'bold',
-      },
-      contained: {
-        boxShadow: 'none',
-      },
-      containedPrimary: {
-        color: COLOR.white,
-      },
-    },
-    MuiPickersToolbarText: {
-      toolbarTxt: {
-        color: COLOR.white,
-      },
-      toolbarBtnSelected: {
-        color: COLOR.white,
+      styleOverrides: {
+        root: {
+          fontWeight: 'bold',
+        },
+        contained: {
+          boxShadow: 'none',
+        },
+        containedPrimary: {
+          color: COLOR.white,
+        },
       },
     },
-    MuiPickersDay: {
-      daySelected: {
-        color: COLOR.white,
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          color: COLOR.light,
+        },
+        indicator: {
+          backgroundColor: COLOR.primary,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          '&$selected': {
+            color: COLOR.primary,
+          },
+        },
       },
     },
   },

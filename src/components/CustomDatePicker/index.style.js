@@ -1,21 +1,19 @@
-import { makeStyles } from '@material-ui/core';
+import styled from 'styled-components';
 
-export default makeStyles(() => ({
-  dateTimePicker: {
-    '& .MuiTextField-root': {
-      width: '100%',
-    },
-    '& .MuiOutlinedInput-root': {
-      width: '100%',
-      paddingLeft: '0px',
-      '& input': {
-        padding: '10.5px 0',
-        height: 'fit-content',
-        color: '#6E6B7B',
-      },
-    },
-    '& .MuiIconButton-label': {
-      color: '#BABFC7',
-    },
-  },
-}));
+export const StyledCustomDatePicker = styled.div`
+  &.MuiTextField-root {
+    width: 100%;
+  }
+  &.MuiOutlinedInput-root {
+    width: 100%;
+    padding-left: 0px;
+    &input: {
+      padding: 10.5px 0;
+      height: fit-content;
+      color: #6e6b7b;
+    }
+  }
+  &.MuiIconButton-label {
+    color: #babfc7;
+  }
+`;

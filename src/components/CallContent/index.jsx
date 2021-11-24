@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import classNames from 'classnames';
 import * as uuid from 'uuid';
 import { useTranslation } from 'react-i18next';
 import {
@@ -13,18 +12,17 @@ import {
   OutlinedInput,
   Select,
   TextareaAutosize,
-} from '@material-ui/core';
+} from '@mui/material';
 import NavPills from '@src/components/NavPills';
-import AddBoxIcon from '@material-ui/icons/AddBox';
-import ClearIcon from '@material-ui/icons/Clear';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import ClearIcon from '@mui/icons-material/Clear';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import Dropzone from '@src/components/Dropzone';
-import useStyles from './index.style';
+import { StyledCallContent } from './index.style';
 import { typeData } from './data';
 
 const CallContent = ({ showCard = false }) => {
-  const classes = useStyles();
   const { t } = useTranslation(['createScript']);
 
   const [content, setContent] = useState('');
@@ -51,20 +49,20 @@ const CallContent = ({ showCard = false }) => {
   }, []);
 
   return (
-    <div className={classes.container}>
+    <StyledCallContent>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={showCard ? 7 : 12} xl={showCard ? 8 : 12}>
-          <h3 className={classes.heading}>{t('callContent')}</h3>
-          <div className={classes.border}>
+          <h3 className="heading">{t('callContent')}</h3>
+          <div className="border">
             <NavPills
               tabs={[
                 {
                   tabButton: t('convertFromText'),
                   tabContent: (
-                    <div className={classes.editorContainer}>
-                      <FormControl fullWidth className={classes.formControl}>
+                    <div className="editorContainer">
+                      <FormControl fullWidth className="formControl">
                         <TextareaAutosize
-                          className={classes.textareaContent}
+                          className="textareaContent"
                           minRows={4}
                           maxRows={4}
                           placeholder={t('enterContentHere')}
@@ -74,7 +72,7 @@ const CallContent = ({ showCard = false }) => {
                       </FormControl>
                       <Grid container justifyContent="flex-end">
                         <Button
-                          className={classes.listeningButton}
+                          className="listeningButton"
                           startIcon={<Icon>headphones</Icon>}
                           variant="outlined"
                           color="primary"
@@ -89,22 +87,17 @@ const CallContent = ({ showCard = false }) => {
                 {
                   tabButton: t('uploadAudioFile'),
                   tabContent: (
-                    <Dropzone
-                      className={classes.audioContainer}
-                      onDrop={onDrop}
-                    >
-                      <span className={classes.audioTitle}>
+                    <Dropzone className="audioContainer" onDrop={onDrop}>
+                      <span className="audioTitle">
                         {t('dragAndDropFile')}{' '}
                         <FormLabel
-                          className={classes.labelAudio}
+                          className="labelAudio"
                           htmlFor="audio-file-input"
                         >
                           {t('clickHere')}
                         </FormLabel>
                       </span>
-                      <p className={classes.fileType}>
-                        {t('supportedAudioFile')}
-                      </p>
+                      <p className="fileType">{t('supportedAudioFile')}</p>
                       <input
                         id="audio-file-input"
                         type="file"
@@ -120,21 +113,15 @@ const CallContent = ({ showCard = false }) => {
         </Grid>
         {showCard && (
           <Grid item xs={12} sm={5} xl={4}>
-            <div className={classes.gridContainer}>
-              <h3 className={classes.heading}>{t('personalizedCard')}</h3>
-              <h3 className={classes.heading}>{t('readingConvention')}</h3>
+            <div className="gridContainer">
+              <h3 className="heading">{t('personalizedCard')}</h3>
+              <h3 className="heading">{t('readingConvention')}</h3>
             </div>
-            <div className={classes.cardContent}>
+            <div className="cardContent">
               {listCard.map(({ id }) => (
-                <div
-                  key={id}
-                  className={classNames(classes.gridContainer, classes.mb10)}
-                >
+                <div key={id} className="gridContainer mb10">
                   <OutlinedInput
-                    className={classNames(
-                      classes.dashedBorder,
-                      classes.textField,
-                    )}
+                    className="dashedBorder textField"
                     placeholder={t('newCard')}
                     fullWidth
                     inputProps={{
@@ -142,10 +129,7 @@ const CallContent = ({ showCard = false }) => {
                     }}
                   />
                   <Select
-                    className={classNames(
-                      classes.dashedBorder,
-                      classes.textField,
-                    )}
+                    className="dashedBorder textField"
                     variant="outlined"
                     IconComponent={KeyboardArrowDownIcon}
                     fullWidth
@@ -157,7 +141,7 @@ const CallContent = ({ showCard = false }) => {
                     ))}
                   </Select>
                   <IconButton
-                    className={classes.clearButton}
+                    className="clearButton"
                     onClick={() => handleRemoveCard(id)}
                   >
                     <ClearIcon />
@@ -171,7 +155,7 @@ const CallContent = ({ showCard = false }) => {
           </Grid>
         )}
       </Grid>
-    </div>
+    </StyledCallContent>
   );
 };
 

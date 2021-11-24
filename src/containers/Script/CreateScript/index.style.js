@@ -1,41 +1,39 @@
-import { makeStyles } from '@material-ui/core';
+import styled from 'styled-components';
 
-export default makeStyles(() => ({
-  backButton: {
-    color: '#6E6B7B',
-    fontSize: '16px',
-  },
-  createButton: {
-    color: '#FFFFFF',
-    fontSize: '14px',
-    fontWeight: 'bold',
-  },
-  nameContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    '& span': {
-      color: '#6E6B7B',
-      fontSize: '16px',
-      fontWeight: 'bold',
-      lineHeight: '21px',
-      textTransform: 'uppercase',
-      marginRight: '4px',
-    },
-  },
-  nameInput: {
-    '&,&::placeholder': {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      opacity: 1,
-    },
-    '&::placeholder': {
-      color: '#B9B9C3',
-    },
-  },
-  createIcon: {
-    color: '#B9B9C3',
-  },
-  mt10: {
-    marginTop: 10,
-  },
-}));
+export const StyledCreateScript = styled.div`
+  .backButton {
+    color: #6e6b7b;
+    font-size: 16px;
+  }
+  .createButton {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .nameContainer {
+    display: flex;
+    align-items: center;
+    span {
+      color: #6e6b7b;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 21px;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+  }
+  .nameInput {
+    ::placeholder {
+      font-size: 18px;
+      font-weight: bold;
+      opacity: 1;
+      color: #b9b9c3;
+    }
+  }
+  .createIcon {
+    color: #b9b9c3;
+  }
+  .mt10 {
+    margin-top: 10;
+  }
+`;

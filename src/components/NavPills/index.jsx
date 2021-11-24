@@ -1,8 +1,8 @@
 /* eslint-disable react/no-array-index-key */
-import { AppBar, Tab, Tabs } from '@material-ui/core';
+import { AppBar, Tab, Tabs } from '@mui/material';
 import React, { useState } from 'react';
 
-import useStyles from './index.style';
+import { StyledNavPills } from './index.style';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -28,23 +28,21 @@ const NavPills = (props) => {
     setActive(value);
   };
 
-  const classes = useStyles();
-
   return (
-    <div>
-      <AppBar position="static" className={classes.appBar} elevation={0}>
+    <StyledNavPills>
+      <AppBar position="static" className="appBar" elevation={0}>
         <Tabs
           value={active}
           onChange={handleChange}
           classes={{
-            indicator: classes.indicator,
+            indicator: 'indicator',
           }}
         >
           {tabs.map((prop, index) => (
             <Tab
               classes={{
-                root: classes.tabRoot,
-                selected: classes.tabSelected,
+                root: 'tabRoot',
+                selected: 'tabSelected',
               }}
               key={index}
               label={prop.tabButton}
@@ -53,16 +51,11 @@ const NavPills = (props) => {
         </Tabs>
       </AppBar>
       {tabs.map((prop, index) => (
-        <TabPanel
-          key={index}
-          className={classes.tabPanel}
-          value={active}
-          index={index}
-        >
+        <TabPanel key={index} className="tabPanel" value={active} index={index}>
           {prop.tabContent}
         </TabPanel>
       ))}
-    </div>
+    </StyledNavPills>
   );
 };
 

@@ -8,16 +8,16 @@ import {
   Button,
   IconButton,
   Typography,
-} from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
-import SyncIcon from '@material-ui/icons/Sync';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import TuneIcon from '@material-ui/icons/Tune';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import WarningIcon from '@material-ui/icons/Warning';
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import SyncIcon from '@mui/icons-material/Sync';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import TuneIcon from '@mui/icons-material/Tune';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import WarningIcon from '@mui/icons-material/Warning';
 import { useTranslation } from 'react-i18next';
 import camelCase from 'camelcase';
 
@@ -26,12 +26,11 @@ import CustomTable from '@src/components/CustomTable';
 import CustomDatePicker from '@src/components/CustomDatePicker';
 import Popup from '@src/components/Popup';
 import { PAGINATION_LIMIT, SCRIPT_TYPES, STATUS } from '@src/constants';
-import useStyles, { StyledMenuItem } from './index.style';
 
 import { campaigns, scriptsData, statusData } from './data';
+import { StyledCampaign, StyledMenuItem } from './index.style';
 
 const Campaign = () => {
-  const classes = useStyles();
   const { t } = useTranslation(['campaign']);
 
   const [pagination, setPagination] = useState({
@@ -103,7 +102,7 @@ const Campaign = () => {
       onClick: () => {},
     },
     {
-      icon: <DeleteIcon className={classes.deleteIcon} />,
+      icon: <DeleteIcon className="deleteIcon" />,
       onClick: handleClickOpenDeletePopup,
     },
   ];
@@ -147,13 +146,13 @@ const Campaign = () => {
 
     return status === STATUS.ERROR ? (
       <Box display="flex">
-        <Typography className={classes.status} style={{ color }}>
+        <Typography className="status" style={{ color }}>
           {text}
         </Typography>
-        <WarningIcon className={classes.warningIcon} />
+        <WarningIcon className="warningIcon" />
       </Box>
     ) : (
-      <Typography className={classes.status} style={{ color }}>
+      <Typography className="status" style={{ color }}>
         {text}
       </Typography>
     );
@@ -164,7 +163,7 @@ const Campaign = () => {
   };
 
   return (
-    <>
+    <StyledCampaign>
       <Popup
         open={openDeletePopup}
         onClose={handleCloseDeletePopup}
@@ -174,13 +173,13 @@ const Campaign = () => {
           campaignName: 'Tên_chiến_dịch',
         })}
       />
-      <div className={classes.campaign}>
+      <div className="campaign">
         <Grid container spacing={2} justifyContent="center">
           <Grid item xs={12} container spacing={2}>
             <Grid item xs={2} xl={3}>
               <TextField
                 size="small"
-                className={classes.textField}
+                className="textField"
                 variant="outlined"
                 placeholder={t('search')}
                 InputProps={{
@@ -195,7 +194,7 @@ const Campaign = () => {
             <Grid item xs={2}>
               <TextField
                 size="small"
-                className={classes.textField}
+                className="textField"
                 variant="outlined"
                 select
                 label={t('scriptType')}
@@ -210,7 +209,7 @@ const Campaign = () => {
             <Grid item xs={2}>
               <TextField
                 size="small"
-                className={classes.textField}
+                className="textField"
                 variant="outlined"
                 select
                 label={t('status')}
@@ -232,7 +231,7 @@ const Campaign = () => {
                 style={{ display: 'flex', justifyContent: 'center' }}
               >
                 <Box display="flex" alignItems="center">
-                  <ArrowForwardIcon className={classes.arrowIcon} />
+                  <ArrowForwardIcon className="arrowIcon" />
                 </Box>
               </Grid>
               <Grid item xs={5}>
@@ -240,7 +239,7 @@ const Campaign = () => {
               </Grid>
               <Grid item xs={1} style={{ display: 'flex' }}>
                 <Box display="flex" alignItems="center">
-                  <Button className={classes.resetButton} variant="contained">
+                  <Button className="resetButton" variant="contained">
                     <SyncIcon />
                   </Button>
                 </Box>
@@ -249,14 +248,10 @@ const Campaign = () => {
           </Grid>
           <Grid item container xs={12} spacing={2}>
             <Grid item container xs={12} justifyContent="space-between">
-              <IconButton className={classes.iconButton}>
+              <IconButton className="iconButton">
                 <TuneIcon />
               </IconButton>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
+              <Button variant="contained" color="primary" className="button">
                 {t('createCampaign')}
               </Button>
             </Grid>
@@ -277,7 +272,7 @@ const Campaign = () => {
           </Grid>
         </Grid>
       </div>
-    </>
+    </StyledCampaign>
   );
 };
 

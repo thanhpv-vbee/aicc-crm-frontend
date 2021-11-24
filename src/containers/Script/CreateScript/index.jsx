@@ -7,19 +7,18 @@ import {
   Grid,
   Input,
   InputAdornment,
-} from '@material-ui/core';
-import CreateIcon from '@material-ui/icons/Create';
-import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+} from '@mui/material';
+import CreateIcon from '@mui/icons-material/Create';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 import { ROUTES } from '@src/constants';
 import CallContent from '@src/components/CallContent';
 import CallIvr from '@src/components/CallIvr';
 import VoiceSettings from '@src/components/VoiceSettings';
 
-import useStyles from './index.style';
+import { StyledCreateScript } from './index.style';
 
 const CreateScript = () => {
-  const classes = useStyles();
   const history = useHistory();
   const { t } = useTranslation(['createScript']);
 
@@ -28,43 +27,39 @@ const CreateScript = () => {
   };
 
   return (
-    <div>
+    <StyledCreateScript>
       <Grid container>
         <Button
-          className={classes.backButton}
+          className="backButton"
           startIcon={<KeyboardArrowLeftIcon />}
           onClick={handleBack}
         >
           {t('back')}
         </Button>
       </Grid>
-      <Grid className={classes.mt10} container justifyContent="space-between">
-        <div className={classes.nameContainer}>
+      <Grid className="mt10" container justifyContent="space-between">
+        <div className="nameContainer">
           <span>{t('sampleScript')} - </span>
-          <FormControl className={classes.formControl}>
+          <FormControl className="formControl">
             <Input
-              classes={{ input: classes.nameInput }}
+              classes={{ input: 'nameInput' }}
               placeholder={t('enterScriptName')}
               endAdornment={
-                <InputAdornment className={classes.createIcon} position="end">
+                <InputAdornment className="createIcon" position="end">
                   <CreateIcon />
                 </InputAdornment>
               }
             />
           </FormControl>
         </div>
-        <Button
-          className={classes.createButton}
-          variant="contained"
-          color="primary"
-        >
+        <Button className="createButton" variant="contained" color="primary">
           {t('saveSampleScript')}
         </Button>
       </Grid>
       <VoiceSettings />
       <CallContent />
       <CallIvr />
-    </div>
+    </StyledCreateScript>
   );
 };
 

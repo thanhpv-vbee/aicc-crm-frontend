@@ -1,93 +1,94 @@
-import { makeStyles } from '@material-ui/core';
+import styled from 'styled-components';
+import { BORDER_RADIUS } from '@src/styles/config';
 
-export default makeStyles((theme) => ({
-  whiteBox: {
-    marginTop: '20px',
-    padding: '18px 20px 20px',
-    backgroundColor: '#FFFFFF',
-    borderRadius: '6px',
-    boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.1)',
-  },
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-    minHeight: '36px',
-  },
-  title: {
-    flexGrow: 1,
-    color: '#6E6B7B',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    position: 'relative',
-    zIndex: 1,
-    overflow: 'hidden',
-    textTransform: 'uppercase',
-    margin: '0px',
-    '&:after': {
-      content: '" "',
-      position: 'absolute',
-      top: '51%',
-      height: '2px',
-      width: '100%',
-      overflow: 'hidden',
-      backgroundColor: '#F3F2F7',
-    },
-  },
-  content: {
-    marginTop: '11px',
-  },
-  label: {
-    color: '#525F7F',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    marginTop: '0px',
-    marginBottom: '4px',
-  },
-  rateInput: {
-    width: '133px',
-  },
-  dashedBorder: {
-    '& .MuiOutlinedInput-notchedOutline': {
-      border: '1px dashed #C4C4C4',
-    },
-  },
-  voiceWrapper: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  mr20: {
-    marginRight: '20px',
-  },
-  slider: {
-    color: '#FC6634',
-    height: '5px',
-    '& .MuiSlider-track': {
-      height: '5px',
-      borderRadius: '5px',
-    },
-    '& .MuiSlider-rail': {
-      height: '5px',
-      borderRadius: '5px',
-      opacity: 1,
-      backgroundColor: '#ECEEEF',
-    },
-    '& .MuiSlider-thumb': {
-      width: '15px',
-      height: '15px',
-    },
-  },
-  textField: {
-    backgroundColor: 'white',
-    height: 'fit-content',
-    borderRadius: theme.shape.borderRadius,
-    '& .MuiInputBase-input': {
-      paddingTop: '10.5px',
-      paddingBottom: '10.5px',
-    },
-  },
-  expandButton: {
-    textTransform: 'none',
-    fontSize: '14px',
-    fontWeight: 'bold',
-  },
-}));
+export const StyledVoiceSettings = styled.div`
+  .whiteBox {
+    margin-top: 20px;
+    padding: 18px 20px 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+  }
+  .title {
+    flex-grow: 1;
+    color: #6e6b7b;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-transform: uppercase;
+    margin: 0px;
+    :after {
+      content: ' ';
+      position: absolute;
+      top: 51%;
+      height: 2px;
+      width: 100%;
+      overflow: hidden;
+      background-color: #f3f2f7;
+    }
+  }
+  .content {
+    margin-top: 11px;
+  }
+  .label {
+    color: #525f7f;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 4px;
+  }
+  .rateInput {
+    width: 133px;
+  }
+  .dashedBorder {
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px dashed #c4c4c4;
+    }
+  }
+  .voiceWrapper {
+    display: flex;
+    align-items: center;
+  }
+  .mr20 {
+    margin-right: 20px;
+  }
+  .slider {
+    color: #fc6634;
+    height: 5px;
+    .MuiSlider-track {
+      height: 5px;
+      border-radius: 5px;
+    }
+    .MuiSlider-rail {
+      height: 5px;
+      border-radius: 5px;
+      opacity: 1;
+      background-color: #eceeef;
+    }
+    .MuiSlider-thumb {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .textField {
+    background-color: white;
+    height: fit-content;
+    border-radius: ${BORDER_RADIUS};
+    .MuiInputBase-input {
+      padding-top: 10.5px;
+      padding-bottom: 10.5px;
+    }
+  }
+  .expandButton {
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold;
+  }
+`;

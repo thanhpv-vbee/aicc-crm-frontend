@@ -1,59 +1,45 @@
 import React from 'react';
-import { Box, IconButton, Icon, Typography } from '@material-ui/core';
-import {
-  KeyboardDatePicker,
-  KeyboardTimePicker,
-  KeyboardDateTimePicker,
-} from '@material-ui/pickers';
+import { Box, IconButton, Icon, Typography, TextField } from '@mui/material';
+import { DatePicker, DateTimePicker, TimePicker } from '@mui/lab';
 import { useTranslation } from 'react-i18next';
 import { DATE_TIME_PICKER_TYPES } from '@src/constants';
-import useStyles from './index.style';
+import {
+  StyledCustomDatePickerRange,
+  StyledCustomDatePicker,
+} from './index.style';
 
-const CustomDatePicker = ({ type, selectedDate, handleChangeDate }) => {
-  const classes = useStyles();
-  return (
-    <div className={classes.dateTimePicker}>
-      {type === DATE_TIME_PICKER_TYPES.DATE && (
-        <KeyboardDatePicker
-          variant="inline"
-          inputVariant="outlined"
-          value={selectedDate}
-          onChange={(date) => handleChangeDate(date)}
-          minDate={new Date()}
-          format="dd/MM/yyyy"
-          InputAdornmentProps={{ position: 'start' }}
-        />
-      )}
-      {type === DATE_TIME_PICKER_TYPES.TIME && (
-        <KeyboardTimePicker
-          variant="inline"
-          inputVariant="outlined"
-          value={selectedDate}
-          onChange={handleChangeDate}
-          InputAdornmentProps={{ position: 'start' }}
-        />
-      )}
-      {type === DATE_TIME_PICKER_TYPES.DATE_TIME && (
-        <KeyboardDateTimePicker
-          autoOk
-          variant="inline"
-          inputVariant="outlined"
-          format="hh:mm - dd/MM/yyyy"
-          InputAdornmentProps={{ position: 'start' }}
-          placeholder="--/--/----"
-          mask="--/--/----"
-          maskChar="-"
-          onChange={handleChangeDate}
-          value={selectedDate}
-        />
-      )}
-    </div>
-  );
-};
+const CustomDatePicker = ({ type, selectedDate, handleChangeDate }) => (
+  <StyledCustomDatePicker>
+    {type === DATE_TIME_PICKER_TYPES.DATE && (
+      <DatePicker
+        value={selectedDate}
+        onChange={handleChangeDate}
+        renderInput={(params) => <TextField {...params} size="small" />}
+        InputAdornmentProps={{ position: 'start' }}
+      />
+    )}
+    {type === DATE_TIME_PICKER_TYPES.TIME && (
+      <TimePicker
+        value={selectedDate}
+        onChange={handleChangeDate}
+        renderInput={(params) => <TextField {...params} size="small" />}
+        InputAdornmentProps={{ position: 'start' }}
+      />
+    )}
+    {type === DATE_TIME_PICKER_TYPES.DATE_TIME && (
+      <DateTimePicker
+        value={selectedDate}
+        onChange={handleChangeDate}
+        renderInput={(props) => <TextField {...props} />}
+        InputAdornmentProps={{ position: 'start' }}
+      />
+    )}
+  </StyledCustomDatePicker>
+);
 
 const CustomDatePickerRange = ({
   isRefresh = true,
-  type = DATE_TIME_PICKER_TYPES.DATE,
+  type = DATE_TIME_PICKER_TYPES.DATE_TIME,
   startDate = new Date(),
   endDate = new Date(),
   handleChangeStartDate,
@@ -61,35 +47,37 @@ const CustomDatePickerRange = ({
   handleRefresh,
 }) => {
   const { t } = useTranslation(['common']);
-  const classes = useStyles();
   return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <CustomDatePicker
-        type={type}
-        selectedDate={startDate}
-        handleChangeDate={handleChangeStartDate}
-      />
-      <Typography className={classes.toText}>{t('to')}</Typography>
-      <CustomDatePicker
-        type={type}
-        selectedDate={endDate}
-        handleChangeDate={handleChangeEndDate}
-      />
-      {isRefresh && (
-        <IconButton
-          aria-label="refresh"
-          className={classes.resetButton}
-          onClick={handleRefresh}
-        >
-          <Icon>sync</Icon>
-        </IconButton>
-      )}
-    </Box>
+    <StyledCustomDatePickerRange>
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
+        alignItems="center"
+        classNam
+      >
+        <CustomDatePicker
+          type={type}
+          selectedDate={startDate}
+          handleChangeDate={handleChangeStartDate}
+        />
+        <Typography className="toText">{t('to')}</Typography>
+        <CustomDatePicker
+          type={type}
+          selectedDate={endDate}
+          handleChangeDate={handleChangeEndDate}
+        />
+        {isRefresh && (
+          <IconButton
+            aria-label="refresh"
+            className="resetButton"
+            onClick={handleRefresh}
+          >
+            <Icon>sync</Icon>
+          </IconButton>
+        )}
+      </Box>
+    </StyledCustomDatePickerRange>
   );
 };
 
