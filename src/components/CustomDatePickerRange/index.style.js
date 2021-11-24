@@ -26,8 +26,13 @@ export const StyledCustomDatePickerRange = styled.div`
   .reset-button {
     color: ${COLOR.light};
   }
-  .toText {
+  .to-text {
     color: ${COLOR.light};
     margin: 0 10px;
+  }
+  .arrow-icon {
+    width: 15px;
+    padding: 5px;
+    color: ${COLOR.light};
   }
 `;

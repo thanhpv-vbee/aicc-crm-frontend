@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { Icon } from '@material-ui/core';
 import ROUTES from '@src/constants/route';
+import { Icon } from '@mui/material';
 
 export const sidebarMenu = [
   {

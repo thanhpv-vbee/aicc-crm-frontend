@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, IconButton, Icon, Typography, TextField } from '@mui/material';
+import { Box, IconButton, Icon, TextField } from '@mui/material';
 import { DatePicker, DateTimePicker, TimePicker } from '@mui/lab';
-import { useTranslation } from 'react-i18next';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DATE_TIME_PICKER_TYPES } from '@src/constants';
 import {
   StyledCustomDatePickerRange,
@@ -45,40 +45,35 @@ const CustomDatePickerRange = ({
   handleChangeStartDate,
   handleChangeEndDate,
   handleRefresh,
-}) => {
-  const { t } = useTranslation(['common']);
-  return (
-    <StyledCustomDatePickerRange>
-      <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        classNam
-      >
-        <CustomDatePicker
-          type={type}
-          selectedDate={startDate}
-          handleChangeDate={handleChangeStartDate}
-        />
-        <Typography className="toText">{t('to')}</Typography>
-        <CustomDatePicker
-          type={type}
-          selectedDate={endDate}
-          handleChangeDate={handleChangeEndDate}
-        />
-        {isRefresh && (
-          <IconButton
-            aria-label="refresh"
-            className="reset-button"
-            onClick={handleRefresh}
-          >
-            <Icon>sync</Icon>
-          </IconButton>
-        )}
-      </Box>
-    </StyledCustomDatePickerRange>
-  );
-};
-
+}) => (
+  <StyledCustomDatePickerRange>
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <CustomDatePicker
+        type={type}
+        selectedDate={startDate}
+        handleChangeDate={handleChangeStartDate}
+      />
+      <ArrowForwardIosIcon className="arrow-icon" />
+      <CustomDatePicker
+        type={type}
+        selectedDate={endDate}
+        handleChangeDate={handleChangeEndDate}
+      />
+      {isRefresh && (
+        <IconButton
+          aria-label="refresh"
+          className="reset-button"
+          onClick={handleRefresh}
+        >
+          <Icon>sync</Icon>
+        </IconButton>
+      )}
+    </Box>
+  </StyledCustomDatePickerRange>
+);
 export default CustomDatePickerRange;

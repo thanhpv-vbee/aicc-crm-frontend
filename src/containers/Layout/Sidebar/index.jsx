@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useHistory, matchPath } from 'react-router-dom';
 import { v4 as uuidV4 } from 'uuid';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import {
   Toolbar,
@@ -15,17 +14,16 @@ import {
   Hidden,
   Tooltip,
   Button,
-} from '@material-ui/core';
-import { ExpandMore, ExpandLess } from '@material-ui/icons';
+} from '@mui/material';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import { sidebarMenu } from './config';
-import useStyles from './index.style';
+import { StyledSidebar } from './index.style';
 
 export default function Sidebar(props) {
   const { collapsed, toggle } = props;
   const [expandMenu, setExpandMenu] = useState();
   const [menuActive, setMenuActive] = useState();
 
-  const classes = useStyles();
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const history = useHistory();
@@ -75,40 +73,30 @@ export default function Sidebar(props) {
       <ListItem
         button
         onClick={() => handleCollapseMenu(index)}
-        className={classNames(classes.menuItem, {
-          [classes.backgroundPrimary]: menuActive === index,
-        })}
+        className={`menuItem ${menuActive === index && 'backgroundPrimary'}`}
       >
         <ListItemIcon
-          className={classNames(classes.menuIcon, {
-            [classes.primary]: menuActive === index,
-          })}
+          className={`menuIcon ${menuActive === index && 'primary'}`}
         >
           {item.icon}
         </ListItemIcon>
         <ListItemText
           primary={t(item.heading)}
-          className={classNames(classes.menuTitle, {
-            [classes.hide]: !mobile && collapsed,
-          })}
+          className={`menuTitle ${!mobile && collapsed && 'hide'}`}
         />
         {expandMenu === index ? (
           <ExpandLess
-            className={classNames(classes.menuIcon, {
-              [classes.hide]: !mobile && collapsed,
-            })}
+            className={`menuIcon ${!mobile && collapsed && 'hide'}`}
           />
         ) : (
           <ExpandMore
-            className={classNames(classes.menuIcon, {
-              [classes.hide]: !mobile && collapsed,
-            })}
+            className={`menuIcon ${!mobile && collapsed && 'hide'}`}
           />
         )}
       </ListItem>
       {!mobile && collapsed && (
-        <div className={classes.placementRightTop}>
-          <List component="div" disablePadding className={classes.subMenu}>
+        <div className="placementRightTop">
+          <List component="div" disablePadding className="subMenu">
             {item.subMenu.map((menuItem) => {
               const isSubmenuActive =
                 menuActive === index && isActiveRoute(menuItem.route);
@@ -116,22 +104,18 @@ export default function Sidebar(props) {
                 <ListItem
                   key={uuidV4()}
                   button
-                  className={classNames(classes.nested, classes.menuItem, {
-                    [classes.backgroundPrimary]: isSubmenuActive,
-                  })}
+                  className={`nested menuItem ${
+                    isSubmenuActive && 'backgroundPrimary'
+                  }`}
                   onClick={() => handleClickMenu(menuItem.route, index)}
                 >
                   <ListItemIcon
-                    className={classNames(classes.menuIcon, {
-                      [classes.primary]: isSubmenuActive,
-                    })}
+                    className={`menuIcon ${isSubmenuActive && 'primary'}`}
                   >
                     {menuItem.icon}
                   </ListItemIcon>
                   <ListItemText
-                    className={classNames(classes.menuTitle, {
-                      [classes.primary]: isSubmenuActive,
-                    })}
+                    className={`menuTitle ${isSubmenuActive && 'primary'}`}
                     primary={t(menuItem.heading)}
                   />
                 </ListItem>
@@ -153,22 +137,18 @@ export default function Sidebar(props) {
               <ListItem
                 key={uuidV4()}
                 button
-                className={classNames(classes.nested, classes.menuItem, {
-                  [classes.backgroundPrimary]: isSubmenuActive,
-                })}
+                className={`nested menuItem ${
+                  isSubmenuActive && 'backgroundPrimary'
+                }`}
                 onClick={() => handleClickMenu(menuItem.route, index)}
               >
                 <ListItemIcon
-                  className={classNames(classes.menuIcon, {
-                    [classes.primary]: isSubmenuActive,
-                  })}
+                  className={`menuIcon ${isSubmenuActive && 'primary'}`}
                 >
                   {menuItem.icon}
                 </ListItemIcon>
                 <ListItemText
-                  className={classNames(classes.menuTitle, {
-                    [classes.primary]: isSubmenuActive,
-                  })}
+                  className={`menuTitle ${isSubmenuActive && 'primary'}`}
                   primary={t(menuItem.heading)}
                 />
               </ListItem>
@@ -191,23 +171,18 @@ export default function Sidebar(props) {
         key={uuidV4()}
         button
         onClick={() => handleClickMenu(item.route, index)}
-        className={classNames(classes.menuItem, {
-          [classes.backgroundPrimary]: menuActive === index,
-        })}
+        className={`menuItem ${menuActive === index && 'backgroundPrimary'}`}
       >
         <ListItemIcon
-          className={classNames(classes.menuIcon, {
-            [classes.primary]: menuActive === index,
-          })}
+          className={`menuIcon ${menuActive === index && 'primary'}`}
         >
           {item.icon}
         </ListItemIcon>
         <ListItemText
           primary={t(item.heading)}
-          className={classNames(classes.menuTitle, {
-            [classes.hide]: !mobile && collapsed,
-            [classes.primary]: menuActive === index,
-          })}
+          className={`menuTitle ${!mobile && collapsed && 'hide'} ${
+            menuActive === index && 'primary'
+          }`}
         />
       </ListItem>
     </ItemWithTooltip>
@@ -217,29 +192,23 @@ export default function Sidebar(props) {
     <Hidden smDown implementation="css">
       <Drawer
         open={!collapsed}
-        className={classNames(classes.drawer, {
-          [classes.drawerOpen]: !collapsed,
-          [classes.drawerClose]: collapsed,
-        })}
+        className={`drawer ${!collapsed && 'drawerOpen'} ${
+          collapsed && 'drawerClose'
+        }`}
         variant="permanent"
         classes={{
-          paper: classNames(classes.drawer, {
-            [classes.drawerOpen]: !collapsed,
-            [classes.drawerClose]: collapsed,
-          }),
+          paper: `drawer ${!collapsed && 'drawerOpen'} ${
+            collapsed && 'drawerClose'
+          }`,
         }}
       >
-        <Toolbar
-          className={classNames(classes.toolbar, {
-            [classes.toolbarCollapsed]: collapsed,
-          })}
-        >
+        <Toolbar className={`toolbar ${collapsed && 'toolbarCollapsed'} }`}>
           <img
-            className={classNames({ [classes.hide]: collapsed })}
+            className={`${collapsed && 'hide'} }`}
             src="/img/logo.svg"
             alt="logo"
           />
-          <Button className={classes.menuButton} onClick={toggle}>
+          <Button className="menuButton" onClick={toggle}>
             <img
               src={
                 collapsed
@@ -250,10 +219,10 @@ export default function Sidebar(props) {
             />
           </Button>
         </Toolbar>
-        <div className={classes.content}>
+        <div className="content">
           <List>
             {sidebarMenu.map((item, index) => (
-              <div key={uuidV4()} className={classes.menuSubmenu}>
+              <div key={uuidV4()} className="menuSubmenu">
                 {item.subMenu
                   ? renderCollapseMenuItem(item, index)
                   : renderMenuItem(item, index)}
@@ -261,11 +230,9 @@ export default function Sidebar(props) {
             ))}
           </List>
         </div>
-        <div className={classes.footer}>
+        <div className="footer">
           <img alt="" src="/img/logo-sidebar.svg" />
-          <p className={classNames({ [classes.hide]: collapsed })}>
-            Powered by Vbee JSC.
-          </p>
+          <p className={`${collapsed && 'hide'} }`}>Powered by Vbee JSC.</p>
         </div>
       </Drawer>
     </Hidden>
@@ -282,7 +249,7 @@ export default function Sidebar(props) {
           keepMounted: true,
         }}
       >
-        <div className={classes.drawerMobile}>
+        <div className="drawerMobile">
           <List>
             {sidebarMenu.map((item, index) => (
               <div key={uuidV4()}>
@@ -298,9 +265,9 @@ export default function Sidebar(props) {
   );
 
   return (
-    <div className="sidebar-container">
+    <StyledSidebar>
       {renderSidebarWindow()}
       {renderSidebarMobile()}
-    </div>
+    </StyledSidebar>
   );
 }

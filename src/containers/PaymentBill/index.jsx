@@ -46,7 +46,7 @@ const PaymentBill = () => {
       >
         <Typography className="header-title">{t('billList')}</Typography>
         <CustomDatePickerRange
-          type={DATE_TIME_PICKER_TYPES.DATE}
+          type={DATE_TIME_PICKER_TYPES.DATE_TIME}
           isRefresh
           startDate={filter.startDate}
           endDate={filter.endDate}
