@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledCreateScript = styled.div`
-  .backButton {
+  .back-button {
     color: #6e6b7b;
     font-size: 16px;
   }
-  .createButton {
+  .create-button {
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
   }
-  .nameContainer {
+  .name-container {
     display: flex;
     align-items: center;
     span {
@@ -22,7 +22,7 @@ export const StyledCreateScript = styled.div`
       margin-right: 4px;
     }
   }
-  .nameInput {
+  .name-input {
     ::placeholder {
       font-size: 18px;
       font-weight: bold;
@@ -30,7 +30,7 @@ export const StyledCreateScript = styled.div`
       color: #b9b9c3;
     }
   }
-  .createIcon {
+  .create-icon {
     color: #b9b9c3;
   }
   .mt10 {

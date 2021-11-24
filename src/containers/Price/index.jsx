@@ -32,7 +32,7 @@ const Price = () => {
               <TableRow>
                 <StyledTableCell rowSpan={2}>{t('no')}</StyledTableCell>
                 <StyledTableCell rowSpan={2}>{t('typeCall')}</StyledTableCell>
-                <StyledTableCell colSpan={2} className="tableCellHeader">
+                <StyledTableCell colSpan={2} className="table-cell-header">
                   {t('unitPrice')}
                 </StyledTableCell>
               </TableRow>
@@ -63,7 +63,7 @@ const Price = () => {
           <Typography className="note" variant="paragraph">
             {t('note')}:
           </Typography>
-          <ul className="noteList">
+          <ul className="note-list">
             <li>
               {t('firstDescription')}
               <a href="/" alt="/" target="_blank">

@@ -6,7 +6,7 @@ export const StyledNavbar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  .contentContainer {
+  .content-container {
     flex: 1;
   }
   .menu {
@@ -16,11 +16,11 @@ export const StyledNavbar = styled.div`
     color: #fff;
     font-weight: bold;
   }
-  .langBtn {
+  .lang-btn {
     color: #000;
     min-width: 0;
   }
-  .langText {
+  .lang-text {
     font-size: 14px;
   }
   .content {
@@ -29,11 +29,11 @@ export const StyledNavbar = styled.div`
     justify-content: flex-start;
     align-items: center;
   }
-  .rightContainer {
+  .righ-container {
     gap: 20px;
     margin-right: 20px;
   }
-  .balanceBox {
+  .balance-box {
     margin-left: 30px;
     display: flex;
     flex-direction: row;
@@ -42,13 +42,13 @@ export const StyledNavbar = styled.div`
     color: #323232;
     size: 14px;
   }
-  .titleText {
+  .title-text {
     margin-right: 5px;
   }
-  .valueText {
+  .value-text {
     font-weight: bold;
   }
-  .nameText {
+  .name-text {
     font-weight: bold;
   }
   .phone {
@@ -57,11 +57,11 @@ export const StyledNavbar = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .phoneImage {
+  .phone-image {
     width: 18px;
     height: 18px;
   }
-  .avatarBox {
+  .avatar-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -69,7 +69,7 @@ export const StyledNavbar = styled.div`
     margin-right: 10px;
     position: relative;
   }
-  .statusDot {
+  .status-dot {
     width: 8px;
     height: 8px;
     position: absolute;
@@ -83,7 +83,7 @@ export const StyledNavbar = styled.div`
     width: 40px;
     height: 40px;
   }
-  .profileText {
+  .profile-text {
     color: #6e6b7b;
   }
   .badge {
@@ -102,7 +102,7 @@ export const StyledNavbar = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .menuItemIcon {
+  .menu-item-icon {
     margin-right: 5px;
     min-width: 0;
   }

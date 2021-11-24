@@ -15,17 +15,17 @@ export const StyledPopup = styled.div`
       }
     }
   }
-  .contentContainer {
+  .content-container {
     margin-top: -10px;
   }
-  .closeIcon {
+  .close-icon {
     padding: 2px 2px 0 0;
   }
-  .cancelButton {
+  .cancel-button {
     color: ${COLOR.primary};
     margin-right: 20px;
   }
-  .closeButton {
+  .close-button {
     padding: 0;
   }
   .content {

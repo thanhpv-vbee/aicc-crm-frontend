@@ -59,10 +59,10 @@ const CallContent = ({ showCard = false }) => {
                 {
                   tabButton: t('convertFromText'),
                   tabContent: (
-                    <div className="editorContainer">
+                    <div className="editor-container">
                       <FormControl fullWidth className="formControl">
                         <TextareaAutosize
-                          className="textareaContent"
+                          className="textarea-content"
                           minRows={4}
                           maxRows={4}
                           placeholder={t('enterContentHere')}
@@ -72,7 +72,7 @@ const CallContent = ({ showCard = false }) => {
                       </FormControl>
                       <Grid container justifyContent="flex-end">
                         <Button
-                          className="listeningButton"
+                          className="listening-button"
                           startIcon={<Icon>headphones</Icon>}
                           variant="outlined"
                           color="primary"
@@ -87,17 +87,17 @@ const CallContent = ({ showCard = false }) => {
                 {
                   tabButton: t('uploadAudioFile'),
                   tabContent: (
-                    <Dropzone className="audioContainer" onDrop={onDrop}>
-                      <span className="audioTitle">
+                    <Dropzone className="audio-container" onDrop={onDrop}>
+                      <span className="audio-title">
                         {t('dragAndDropFile')}{' '}
                         <FormLabel
-                          className="labelAudio"
+                          className="label-audio"
                           htmlFor="audio-file-input"
                         >
                           {t('clickHere')}
                         </FormLabel>
                       </span>
-                      <p className="fileType">{t('supportedAudioFile')}</p>
+                      <p className="file-type">{t('supportedAudioFile')}</p>
                       <input
                         id="audio-file-input"
                         type="file"
@@ -113,15 +113,15 @@ const CallContent = ({ showCard = false }) => {
         </Grid>
         {showCard && (
           <Grid item xs={12} sm={5} xl={4}>
-            <div className="gridContainer">
+            <div className="grid-container">
               <h3 className="heading">{t('personalizedCard')}</h3>
               <h3 className="heading">{t('readingConvention')}</h3>
             </div>
-            <div className="cardContent">
+            <div className="card-content">
               {listCard.map(({ id }) => (
-                <div key={id} className="gridContainer mb10">
+                <div key={id} className="grid-container mb10">
                   <OutlinedInput
-                    className="dashedBorder textField"
+                    className="dashed-border text-field"
                     placeholder={t('newCard')}
                     fullWidth
                     inputProps={{
@@ -129,7 +129,7 @@ const CallContent = ({ showCard = false }) => {
                     }}
                   />
                   <Select
-                    className="dashedBorder textField"
+                    className="dashed-border text-field"
                     variant="outlined"
                     IconComponent={KeyboardArrowDownIcon}
                     fullWidth
@@ -141,7 +141,7 @@ const CallContent = ({ showCard = false }) => {
                     ))}
                   </Select>
                   <IconButton
-                    className="clearButton"
+                    className="clear-button"
                     onClick={() => handleRemoveCard(id)}
                   >
                     <ClearIcon />

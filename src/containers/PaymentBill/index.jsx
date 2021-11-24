@@ -44,7 +44,7 @@ const PaymentBill = () => {
         alignItems="center"
         mb={2}
       >
-        <Typography className="headerTitle">{t('billList')}</Typography>
+        <Typography className="header-title">{t('billList')}</Typography>
         <CustomDatePickerRange
           type={DATE_TIME_PICKER_TYPES.DATE}
           isRefresh
@@ -55,7 +55,7 @@ const PaymentBill = () => {
           handleRefresh={handleRefresh}
         />
       </Box>
-      <div className="analystContainer">
+      <div className="analyst-container">
         <Statistics items={statistics} col={3} />
       </div>
     </StyledPaymentBill>

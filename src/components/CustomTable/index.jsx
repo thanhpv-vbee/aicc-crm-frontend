@@ -20,7 +20,7 @@ const CustomTableRow = ({ item, heads, actions, index }) => (
     {heads.map((head) => {
       if (item.id === 'totalRow') {
         return (
-          <TableCell className="tableCell" align={head.align}>
+          <TableCell className="table-cell" align={head.align}>
             {(head.valueName !== 'actions' &&
               head.valueName !== 'no' &&
               item[head.valueName]) ||
@@ -35,7 +35,7 @@ const CustomTableRow = ({ item, heads, actions, index }) => (
             actions.length &&
             actions.map((action) => (
               <IconButton
-                className="iconButton"
+                className="icon-button"
                 onClick={() => action.onClick(item.id)}
               >
                 {action.icon}
@@ -90,8 +90,8 @@ const CustomTable = ({
         justifyContent="space-between"
         mt={2}
       >
-        <Typography className="paginationText">
-          {t('paginationText', {
+        <Typography className="pagination-text">
+          {t('pagination-text', {
             start: (pagination.page - 1) * pagination.limit + 1,
             end: pagination.page * pagination.limit,
             total: pagination.total,

@@ -10,16 +10,16 @@ export const StyledCampaign = styled.div`
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
     padding: 25px;
   }
-  .textField {
+  .text-field {
     background-color: #fff;
     width: 100%;
     height: fit-content;
     border-radius: ${BORDER_RADIUS};
   }
-  .arrowIcon {
+  .arrow-icon {
     color: #babfc7;
   }
-  .resetButton {
+  .reset-button {
     min-width: 50px;
     padding: 6px;
     box-shadow: none;
@@ -27,17 +27,17 @@ export const StyledCampaign = styled.div`
   .button {
     text-transform: none;
   }
-  .iconButton {
+  .icon-button {
     padding: 5px;
   }
-  .deleteIcon {
+  .delete-icon {
     color: #ea5455;
   }
   .status {
     font-weight: bold;
     margin-right: 5px;
   }
-  .warningIcon {
+  .warning-icon {
     color: #ea5455;
   }
 `;

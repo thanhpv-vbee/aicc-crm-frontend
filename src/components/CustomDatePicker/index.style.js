@@ -7,7 +7,7 @@ export const StyledCustomDatePicker = styled.div`
   &.MuiOutlinedInput-root {
     width: 100%;
     padding-left: 0px;
-    &input: {
+    &input {
       padding: 10.5px 0;
       height: fit-content;
       color: #6e6b7b;

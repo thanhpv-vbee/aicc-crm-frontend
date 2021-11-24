@@ -58,14 +58,14 @@ const CallIvr = () => {
     <StyledCallIvr>
       <Grid container justifyContent="space-between" alignItems="center">
         <div className="header">
-          <h3 className="headerText">{t('feedbackKey')}</h3>
+          <h3 className="header-text">{t('feedbackKey')}</h3>
           <Tooltip title="title" placement="top">
             <HelpOutlineIcon color="primary" />
           </Tooltip>
         </div>
         {keys.length > 0 && (
           <Button
-            className="deleteButton"
+            className="delete-button"
             color="primary"
             onClick={handleRemoveAll}
           >
@@ -78,17 +78,17 @@ const CallIvr = () => {
           {keys.map((item) => {
             const { id: keyId, key } = item;
             return (
-              <div key={keyId} className="keyContainer">
+              <div key={keyId} className="key-container">
                 <Button
-                  className={`keyButton ${
-                    keyId === currentKey && 'keyButtonSelected'
+                  className={`key-button ${
+                    keyId === currentKey && 'key-button-selected'
                   }`}
                   onClick={() => handleSelectKey(item)}
                 >
                   {key}
                 </Button>
                 <IconButton
-                  className="clearButton"
+                  className="clear-button"
                   onClick={() => handleRemoveKey(keyId)}
                 >
                   <ClearIcon />
@@ -96,9 +96,9 @@ const CallIvr = () => {
               </div>
             );
           })}
-          <div className="keyContainer">
+          <div className="key-container">
             <Button
-              className="keyButton keyButtonAdd"
+              className="key-button key-button-add"
               aria-describedby={id}
               onClick={handleClick}
             >
@@ -120,7 +120,7 @@ const CallIvr = () => {
               }}
             >
               <div
-                className="numpadContainer"
+                className="numpad-container"
                 autoFocusItem={open}
                 id="composition-menu"
                 aria-labelledby="composition-button"

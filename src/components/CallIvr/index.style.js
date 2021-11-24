@@ -12,22 +12,22 @@ export const StyledCallIvr = styled.div`
     display: flex;
     align-items: center;
   }
-  .headerText {
+  .header-text {
     font-size: 14px;
     text-transform: uppercase;
     color: #6e6b7b;
     margin-right: 5px;
   }
-  .keyContainer {
+  .key-container {
     align-items: center;
     position: relative;
     &:hover {
-      .clearButton {
+      .clear-button {
         display: block;
       }
     }
   }
-  .keyButton {
+  .key-button {
     height: 44px;
     width: 100%;
     border-radius: 0px;
@@ -35,22 +35,22 @@ export const StyledCallIvr = styled.div`
     font-size: 14px;
     font-weight: bold;
     color: #6e6b7b;
-    box-shadow: 0px 4px 15px rgba(0; 0; 0; 0.06);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
   }
-  .keyButtonSelected {
+  .key-button-selected {
     color: #242424;
     border-right: 2px solid #242424;
     &:hover {
       background-color: rgba(30, 30, 30, 0.12);
     }
   }
-  .keyButtonAdd {
+  .key-button-add {
     color: #fc6634;
     &:hover {
       background-color: rgba(252, 102, 52, 0.12);
     }
   }
-  .clearButton {
+  .clear-button {
     color: #ea5455;
     padding: 0px;
     position: absolute;
@@ -61,7 +61,7 @@ export const StyledCallIvr = styled.div`
   .paper {
     box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
   }
-  .numpadContainer {
+  .numpad-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -78,7 +78,7 @@ export const StyledCallIvr = styled.div`
       color: #fc6634;
     }
   }
-  .deleteButton {
+  .delete-button {
     font-size: 14px;
     font-weight: bold;
     text-transform: none;

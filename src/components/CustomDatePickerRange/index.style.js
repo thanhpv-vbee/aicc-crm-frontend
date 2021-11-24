@@ -8,11 +8,11 @@ export const StyledCustomDatePicker = styled.div`
   &.MuiOutlinedInput-root {
     width: 100%;
     padding-left: 0px;
-    input: {
-      padding: 10.5px 0;
-      height: fit-content;
-      color: #babfc7;
-    }
+  }
+  input {
+    padding: 10.5px 0;
+    height: fit-content;
+    color: #babfc7;
   }
   &.MuiIconButton-label {
     color: #babfc7;
@@ -23,7 +23,7 @@ export const StyledCustomDatePicker = styled.div`
 `;
 
 export const StyledCustomDatePickerRange = styled.div`
-  .resetButton {
+  .reset-button {
     color: ${COLOR.light};
   }
   .toText {

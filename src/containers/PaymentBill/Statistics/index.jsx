@@ -6,7 +6,7 @@ import { StyledStatistics, StyledIconCustom } from './index.style';
 
 const IconCustom = ({ iconName, bgColor }) => (
   <StyledIconCustom bgColor={bgColor}>
-    <Box className="iconBox">
+    <Box className="icon-box">
       <Icon className="icon">{iconName}</Icon>
     </Box>
   </StyledIconCustom>
@@ -20,7 +20,7 @@ const Statistics = ({ items, col }) => {
       <Grid container spacing={3}>
         {items.map((item) => (
           <Grid item xs={Math.floor(12 / col)}>
-            <div className="analystItem">
+            <div className="analyst-item">
               <Box
                 display="flex"
                 flexDirection="row"
@@ -29,10 +29,10 @@ const Statistics = ({ items, col }) => {
                 mb={3}
               >
                 <Box>
-                  <Typography className="analystLabel">
+                  <Typography className="analyst-label">
                     {t(item.label)}
                   </Typography>
-                  <Typography className="analystValue">
+                  <Typography className="analyst-value">
                     {formatNumber(item.value)}
                   </Typography>
                 </Box>
@@ -49,21 +49,23 @@ const Statistics = ({ items, col }) => {
                   mr={2}
                 >
                   {item.up && (
-                    <Icon className="upColor statusIcon">arrow_upward</Icon>
+                    <Icon className="up-color status-icon">arrow_upward</Icon>
                   )}
                   {!item.up && (
-                    <Icon className="downColor statusIcon">arrow_downward</Icon>
+                    <Icon className="down-color status-icon">
+                      arrow_downward
+                    </Icon>
                   )}
                   <Typography
                     className={`${
-                      item.up ? 'upColor' : 'downColor'
+                      item.up ? 'up-color' : 'down-color'
                     } percentage`}
                   >
                     {item.percentage}%
                   </Typography>
                 </Box>
-                <Typography className="compareTime">
-                  {t(item.compareTime)}
+                <Typography className="compare-time">
+                  {t(item.comepareTime)}
                 </Typography>
               </Box>
             </div>

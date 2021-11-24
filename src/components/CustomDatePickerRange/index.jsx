@@ -70,7 +70,7 @@ const CustomDatePickerRange = ({
         {isRefresh && (
           <IconButton
             aria-label="refresh"
-            className="resetButton"
+            className="reset-button"
             onClick={handleRefresh}
           >
             <Icon>sync</Icon>

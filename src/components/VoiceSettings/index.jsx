@@ -25,12 +25,12 @@ const VoiceSettings = ({ className = '' }) => {
 
   return (
     <StyledVoiceSettings>
-      <div className={`whiteBox ${className !== undefined && 'className'}`}>
+      <div className={`white-box ${className !== undefined && 'className'}`}>
         <div className="header">
           <h3 className="title">{t('chooseVoice')}</h3>
           {!expanded && (
             <Button
-              className="expandButton"
+              className="expand-button"
               endIcon={<ExpandMoreIcon />}
               onClick={() => setExpanded(true)}
               color="primary"
@@ -44,7 +44,7 @@ const VoiceSettings = ({ className = '' }) => {
             <Grid item xs={6} sm={3} md={2}>
               <p className="label">{t('language')}</p>
               <Select
-                className="dashedBorder textField"
+                className="dashed-border text-field"
                 variant="outlined"
                 IconComponent={KeyboardArrowDownIcon}
                 fullWidth
@@ -59,7 +59,7 @@ const VoiceSettings = ({ className = '' }) => {
             <Grid item xs={6} sm={3} md={2}>
               <p className="label">{t('chooseVoice')}</p>
               <Select
-                className="dashedBorder textField"
+                className="dashed-border text-field"
                 variant="outlined"
                 IconComponent={KeyboardArrowDownIcon}
                 fullWidth
@@ -73,9 +73,9 @@ const VoiceSettings = ({ className = '' }) => {
             </Grid>
             <Grid item xs={6} sm={3} md={3}>
               <p className="label">{t('rate')}</p>
-              <div className="voiceWrapper">
+              <div className="voice-wrapper">
                 <OutlinedInput
-                  className="textField mr20 dashedBorder rateInput"
+                  className="text-field mr20 dashed-border rate-input"
                   defaultValue="1.0"
                   endAdornment={
                     <InputAdornment position="end">x</InputAdornment>
@@ -96,7 +96,7 @@ const VoiceSettings = ({ className = '' }) => {
             <Grid item xs={6} sm={3} md={2}>
               <p className="label">{t('soundtrack')}</p>
               <Select
-                className="dashedBorder textField"
+                className="dashed-border text-field"
                 variant="outlined"
                 IconComponent={KeyboardArrowDownIcon}
                 fullWidth
@@ -110,7 +110,7 @@ const VoiceSettings = ({ className = '' }) => {
             </Grid>
             <Grid item container justifyContent="flex-end">
               <Button
-                className="expandButton"
+                className="expand-button"
                 endIcon={<ExpandLessIcon />}
                 onClick={() => setExpanded(false)}
                 color="primary"

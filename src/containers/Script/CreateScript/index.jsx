@@ -30,7 +30,7 @@ const CreateScript = () => {
     <StyledCreateScript>
       <Grid container>
         <Button
-          className="backButton"
+          className="back-button"
           startIcon={<KeyboardArrowLeftIcon />}
           onClick={handleBack}
         >
@@ -38,21 +38,21 @@ const CreateScript = () => {
         </Button>
       </Grid>
       <Grid className="mt10" container justifyContent="space-between">
-        <div className="nameContainer">
+        <div className="name-container">
           <span>{t('sampleScript')} - </span>
           <FormControl className="formControl">
             <Input
-              classes={{ input: 'nameInput' }}
+              classes={{ input: 'name-input' }}
               placeholder={t('enterScriptName')}
               endAdornment={
-                <InputAdornment className="createIcon" position="end">
+                <InputAdornment className="create-icon" position="end">
                   <CreateIcon />
                 </InputAdornment>
               }
             />
           </FormControl>
         </div>
-        <Button className="createButton" variant="contained" color="primary">
+        <Button className="create-button" variant="contained" color="primary">
           {t('saveSampleScript')}
         </Button>
       </Grid>

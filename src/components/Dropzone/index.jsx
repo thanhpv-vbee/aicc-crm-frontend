@@ -30,7 +30,7 @@ const Dropzone = (props) => {
     <StyledDropzone>
       <div
         className={`root ${className !== undefined && className} ${
-          dragging && 'dragActive'
+          dragging && 'drag-active'
         }`}
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}

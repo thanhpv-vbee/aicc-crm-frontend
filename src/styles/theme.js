@@ -35,6 +35,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'San Francisco Display',
+    fontSize: 11,
   },
   components: {
     MuiButton: {

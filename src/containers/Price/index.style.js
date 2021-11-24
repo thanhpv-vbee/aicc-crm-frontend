@@ -39,7 +39,7 @@ export const StyledPrice = styled.div`
     justify-content: space-between;
     flex-grow: 1;
   }
-  .tableCellHeader {
+  .table-cell-header {
     border: none;
   }
   .footer {
@@ -48,7 +48,7 @@ export const StyledPrice = styled.div`
   .note {
     margin: 0;
   }
-  .noteList {
+  .note-list {
     margin-top: 5px;
     list-style: square inside
       url(data:image/gif;base64;R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==);

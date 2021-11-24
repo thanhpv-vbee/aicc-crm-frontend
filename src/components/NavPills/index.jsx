@@ -30,7 +30,7 @@ const NavPills = (props) => {
 
   return (
     <StyledNavPills>
-      <AppBar position="static" className="appBar" elevation={0}>
+      <AppBar position="static" className="app-bar" elevation={0}>
         <Tabs
           value={active}
           onChange={handleChange}
@@ -41,8 +41,8 @@ const NavPills = (props) => {
           {tabs.map((prop, index) => (
             <Tab
               classes={{
-                root: 'tabRoot',
-                selected: 'tabSelected',
+                root: 'tab-root',
+                selected: 'tab-selected',
               }}
               key={index}
               label={prop.tabButton}

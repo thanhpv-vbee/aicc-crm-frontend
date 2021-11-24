@@ -40,16 +40,16 @@ const Popup = (props) => {
         className="popup"
       >
         <Box>
-          <Box className="closeIcon" display="flex" justifyContent="flex-end">
+          <Box className="close-icon" display="flex" justifyContent="flex-end">
             <IconButton
               aria-label="close"
-              className="closeButton"
+              className="close-button"
               onClick={onClose}
             >
               <CloseIcon />
             </IconButton>
           </Box>
-          <Box display="flex" paddingX={3} pb={2} className="contentContainer">
+          <Box display="flex" paddingX={3} pb={2} className="content-container">
             <Box>
               <img src="/img/note.svg" alt="" />
             </Box>

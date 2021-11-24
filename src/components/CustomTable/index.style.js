@@ -13,7 +13,7 @@ export const StyledTableCell = styled(TableCell)`
   &.MuiTableCell-body {
     font-size: 16px;
   }
-  .iconButton {
+  .icon-button {
     padding: 5px;
     background: #ffffff;
     color: #babfc7;
@@ -25,7 +25,7 @@ export const StyledTableCell = styled(TableCell)`
 `;
 
 export const StyledCustomTable = styled.div`
-  .paginationText {
+  .pagination-text {
     color: ${COLOR.light};
     font-weight: 600;
   }
@@ -34,7 +34,7 @@ export const StyledCustomTable = styled.div`
       color: #fff;
     }
   }
-  .tableCell {
+  .table-cell {
     font-weight: 500;
     font-size: 16px;
   }

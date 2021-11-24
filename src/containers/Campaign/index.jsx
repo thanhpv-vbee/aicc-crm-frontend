@@ -102,7 +102,7 @@ const Campaign = () => {
       onClick: () => {},
     },
     {
-      icon: <DeleteIcon className="deleteIcon" />,
+      icon: <DeleteIcon className="delete-icon" />,
       onClick: handleClickOpenDeletePopup,
     },
   ];
@@ -149,7 +149,7 @@ const Campaign = () => {
         <Typography className="status" style={{ color }}>
           {text}
         </Typography>
-        <WarningIcon className="warningIcon" />
+        <WarningIcon className="warning-icon" />
       </Box>
     ) : (
       <Typography className="status" style={{ color }}>
@@ -179,7 +179,7 @@ const Campaign = () => {
             <Grid item xs={2} xl={3}>
               <TextField
                 size="small"
-                className="textField"
+                className="text-field"
                 variant="outlined"
                 placeholder={t('search')}
                 InputProps={{
@@ -194,7 +194,7 @@ const Campaign = () => {
             <Grid item xs={2}>
               <TextField
                 size="small"
-                className="textField"
+                className="text-field"
                 variant="outlined"
                 select
                 label={t('scriptType')}
@@ -209,7 +209,7 @@ const Campaign = () => {
             <Grid item xs={2}>
               <TextField
                 size="small"
-                className="textField"
+                className="text-field"
                 variant="outlined"
                 select
                 label={t('status')}
@@ -231,7 +231,7 @@ const Campaign = () => {
                 style={{ display: 'flex', justifyContent: 'center' }}
               >
                 <Box display="flex" alignItems="center">
-                  <ArrowForwardIcon className="arrowIcon" />
+                  <ArrowForwardIcon className="arrow-icon" />
                 </Box>
               </Grid>
               <Grid item xs={5}>
@@ -239,7 +239,7 @@ const Campaign = () => {
               </Grid>
               <Grid item xs={1} style={{ display: 'flex' }}>
                 <Box display="flex" alignItems="center">
-                  <Button className="resetButton" variant="contained">
+                  <Button className="reset-button" variant="contained">
                     <SyncIcon />
                   </Button>
                 </Box>
@@ -248,7 +248,7 @@ const Campaign = () => {
           </Grid>
           <Grid item container xs={12} spacing={2}>
             <Grid item container xs={12} justifyContent="space-between">
-              <IconButton className="iconButton">
+              <IconButton className="icon-button">
                 <TuneIcon />
               </IconButton>
               <Button variant="contained" color="primary" className="button">

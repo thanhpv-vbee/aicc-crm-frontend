@@ -19,10 +19,10 @@ export const StyledCallContent = styled.div`
   .border {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
   }
-  .editorContainer {
+  .editor-container {
     padding: 15px 12px 12px 17px;
   }
-  .textareaContent {
+  .textarea-content {
     width: 100%;
     height: 100%;
     cursor: text;
@@ -38,18 +38,18 @@ export const StyledCallContent = styled.div`
       outline: none;
     }
   }
-  .audioContainer {
+  .audio-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 48px 17px;
   }
-  .listeningButton {
+  .listening-button {
     border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
   }
-  .labelAudio {
+  .label-audio {
     font-size: 16px;
     font-weight: 900;
     color: #fc6634;
@@ -57,23 +57,23 @@ export const StyledCallContent = styled.div`
       cursor: pointer;
     }
   }
-  .audioTitle {
+  .audio-title {
     font-size: 16px;
     font-weight: 900;
     color: #8898aa;
   }
-  .fileType {
+  .file-type {
     font-size: 12px;
     font-weight: 900;
     color: #8898aa;
     margin-top: 17px 0px 0px;
   }
-  .gridContainer {
+  .grid-container {
     display: grid;
     grid-template-columns: 3fr 2fr 36px;
     column-gap: 20px;
   }
-  .cardContent {
+  .card-content {
     height: 230px;
     overflow-y: auto;
     ::-webkit-scrollbar {
@@ -88,12 +88,12 @@ export const StyledCallContent = styled.div`
       border-radius: 5px;
     }
   }
-  .dashedBorder {
+  .dashed-border {
     &.MuiOutlinedInput-notchedOutline {
       border: 1px dashed #c4c4c4;
     }
   }
-  .textField {
+  .text-field {
     background-color: white;
     height: fit-content;
     border-radius: ${BORDER_RADIUS};
@@ -102,7 +102,7 @@ export const StyledCallContent = styled.div`
       padding-bottom: 10.5px;
     }
   }
-  .clearButton {
+  .clear-button {
     color: #ea5455;
     padding: 5px;
   }

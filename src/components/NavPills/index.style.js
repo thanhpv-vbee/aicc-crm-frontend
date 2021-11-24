@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledNavPills = styled.div`
-  .appBar {
+  .app-bar {
     background-color: #f3f2f7;
   }
   .indicator {
     background-color: #fc6634;
   }
-  .tabRoot {
+  .tab-root {
     color: #babfc7;
     opacity: 1;
-    fontsize: 14px;
+    font-size: 14px;
     font-weight: 500;
   }
-  .tabSelected {
+  .tab-selected {
     color: #fc6634;
     background-color: #ffffff;
   }

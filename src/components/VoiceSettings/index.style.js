@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { BORDER_RADIUS } from '@src/styles/config';
 
 export const StyledVoiceSettings = styled.div`
-  .whiteBox {
+  .white-box {
     margin-top: 20px;
     padding: 18px 20px 20px;
     background-color: #ffffff;
@@ -44,15 +44,15 @@ export const StyledVoiceSettings = styled.div`
     margin-top: 0px;
     margin-bottom: 4px;
   }
-  .rateInput {
+  .rate-input {
     width: 133px;
   }
-  .dashedBorder {
+  .dashed-border {
     .MuiOutlinedInput-notchedOutline {
       border: 1px dashed #c4c4c4;
     }
   }
-  .voiceWrapper {
+  .voice-wrapper {
     display: flex;
     align-items: center;
   }
@@ -77,7 +77,7 @@ export const StyledVoiceSettings = styled.div`
       height: 15px;
     }
   }
-  .textField {
+  .text-field {
     background-color: white;
     height: fit-content;
     border-radius: ${BORDER_RADIUS};
@@ -86,7 +86,7 @@ export const StyledVoiceSettings = styled.div`
       padding-bottom: 10.5px;
     }
   }
-  .expandButton {
+  .expand-button {
     text-transform: none;
     font-size: 14px;
     font-weight: bold;

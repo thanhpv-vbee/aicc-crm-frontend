@@ -40,7 +40,7 @@ const CustomMenu = ({ anchorEl, handleClose, items, handleClick }) => {
     >
       {items.map((item) => (
         <MenuItem key={item.value} onClick={() => handleClick(item.value)}>
-          <ListItemIcon className="menuItemIcon">
+          <ListItemIcon className="menu-item-icon">
             <img src={`/img/${item.iconPath}`} alt={item.value} />
           </ListItemIcon>
           <Typography variant="inherit"> {t(item.label)}</Typography>
@@ -78,13 +78,13 @@ const LanguageSelect = () => {
       <Button
         color="inherit"
         aria-haspopup="true"
-        className="langBtn"
+        className="lang-btn"
         startIcon={
           <img src={`/img/${getLanguageIcon(i18n.language)}`} alt="diamond" />
         }
         onClick={handleOpenLanguage}
       >
-        <Typography className="langText">{t(i18n.language)}</Typography>
+        <Typography className="lang-text">{t(i18n.language)}</Typography>
       </Button>
       <CustomMenu
         anchorEl={anchorEl}
@@ -101,9 +101,9 @@ const Account = ({ user = userPattern }) => {
 
   return (
     <div className="account">
-      <div className="avatarBox">
+      <div className="avatar-box">
         <img src={user.avatar} alt="avatar" className="avatar" />
-        <div className="statusDot" />
+        <div className="status-dot" />
       </div>
       <Box
         display="flex"
@@ -111,8 +111,8 @@ const Account = ({ user = userPattern }) => {
         justifyContent="center"
         alignItems="flex-start"
       >
-        <Typography className="text nameText">{user.name}</Typography>
-        <Typography className="text profileText">{t('profile')}</Typography>
+        <Typography className="text name-text">{user.name}</Typography>
+        <Typography className="text profile-text">{t('profile')}</Typography>
       </Box>
     </div>
   );
@@ -131,14 +131,14 @@ const Navbar = () => {
         >
           {t('recharge')}
         </Button>
-        <div className="balanceBox">
-          <Typography className="text titleText">
+        <div className="balance-box">
+          <Typography className="text title-text">
             {t('remainBalance')}:
           </Typography>
-          <Typography className="text valueText">23.029.401</Typography>
+          <Typography className="text value-text">23.029.401</Typography>
         </div>
       </div>
-      <div className="content rightContainer">
+      <div className="content righ-container">
         <IconButton aria-label="notification" size="medium">
           <Badge
             badgeContent={4}
@@ -153,7 +153,11 @@ const Navbar = () => {
         <LanguageSelect />
         <div className="phone">
           <IconButton aria-label="phone" size="medium">
-            <img src="/img/phone-icon.svg" alt="phone" className="phoneImage" />
+            <img
+              src="/img/phone-icon.svg"
+              alt="phone"
+              className="phone-image"
+            />
           </IconButton>
         </div>
         <Account />

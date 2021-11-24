@@ -3,6 +3,6 @@
   "confirm": "Xác nhận",
   "goBack": "Quay lại",
   "confirmQuestion": "Bạn có chắc với quyết định này?",
-  "paginationText": "Hiển thị từ {{start}} đến {{end}} của {{total}}",
+  "pagination-text": "Hiển thị từ {{start}} đến {{end}} của {{total}}",
   "to": "Đến"
 }
